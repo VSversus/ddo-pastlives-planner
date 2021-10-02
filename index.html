@@ -1,0 +1,2014 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+
+    <title>DDO Reincarnations Planner</title>
+</head>
+
+<body>
+    <div class="container" id="">
+        <div class="row">
+            <h1>DDO Reincarnations Planner</h1>
+        </div>
+        <div class="row">
+            <p id="tooltipNotification">
+                Mouse over the icon to see the passive past live feat bonus
+            </p>
+        </div>
+        <div class="row text-center">
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Alchemist.png" alt="Alchemist Icon"
+                        title="+1 to the DC's of your Transmutation spells &#10;+20 Maximum Spell Points">
+                    <figcaption>Alchemist</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Artificer.png" alt="Artificer Icon"
+                        title="a stacking +1 bonus to all Intelligence based skills &#10;a stacking +1 bonus to Use Magic Device skill">
+                    <figcaption>Artificer</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Barbarian.png" alt="Barbarian Icon"
+                        title="10 additional hit points">
+                    <figcaption>Barbarian</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Bard.png" alt="Bard Icon"
+                        title="+2 to saves vs. enchantments and illusions &#10;+1 bard song usage">
+                    <figcaption>Bard</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Cleric.png" alt="Cleric Icon"
+                        title="+1 to the DC's of your Conjuration spells &#10;+1 Turn Undead attempt per rest &#10;You Turn Undead as if you were 2 levels higher">
+                    <figcaption>Cleric</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Druid.png" alt="Druid Icon"
+                        title="Your summoned creatures, charmed minions, and hirelings gain +2 to all ability scores">
+                    <figcaption>Druid</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/FavoredSoul.png" alt="Favored Soul Icon"
+                        title="+1 to spell penetration checks &#10;+20 additional spell points">
+                    <figcaption>Favored Soul</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Fighter.png" alt="Fighter Icon"
+                        title="+1 to attack rolls &#10;+1 to the DC's of your tactical feats">
+                    <figcaption>Fighter</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Monk.gif" alt="Monk Icon" title="+1 to damage rolls">
+                    <figcaption>Monk</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Paladin.png" alt="Paladin Icon"
+                        title="+10 positive Healing Amplification (providing +10, +20, or +30 amplification as the feat stacks)">
+                    <figcaption>Paladin</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Ranger.png" alt="Ranger Icon"
+                        title="+2 damage with ranged weapons (note this applies to missile weapons only, and not thrown) &#10;+2 to elemental resistances">
+                    <figcaption>Ranger</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Rogue.png" alt="Rogue Icon"
+                        title="+2 to saves vs. traps &#10;+1 damage when sneak attacking">
+                    <figcaption>Rogue</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Sorcerer.png" alt="Sorcerer Icon"
+                        title="+1 to the DC's of your Evocation spells &#10;+20 additional spell points">
+                    <figcaption>Sorcerer</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Warlock.png" alt="Warlock Icon" title="+3 Magical Resistance">
+                    <figcaption>Warlock</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Wizard.png" alt="Wizard Icon"
+                        title="+2 to spell penetration checks &#10;+2 to the DC's of Wands you use">
+                    <figcaption>Wizard</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="" alt="" title="">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+        </div>
+        <!--end of row heroic icons-->
+        <!--racial icons-->
+        <div class="row text-center">
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Human.png" alt="Human Icon"
+                        title="1st: +1 Haggle&#10;2nd: +1 Wisdom&#10;3rd: +1 Racial Action Point">
+                    <figcaption>Human</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Dwarf.png" alt="Dwarf Icon"
+                        title="1st: +1 Balance&#10;2nd: +1 Constitution&#10;3rd: +1 Racial Action Point">
+                    <figcaption>Dwarf</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Halfling.png" alt="Halfling Icon"
+                        title="1st: +1 Move Silently&#10;2nd: +1 Dexterity&#10;3rd: +1 Racial Action Point">
+                    <figcaption>Halfling</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Wood_Elf.jpg" alt="Elf Icon"
+                        title="1st: +1 Spot&#10;2nd: +1 Dexterity&#10;3rd: +1 Racial Action Point">
+                    <figcaption>Elf or Wood-Elf</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Dragonborn.png" alt="Dragonborn Icon"
+                        title="1st: +1 Spellcraft&#10;2nd: +1 Charisma&#10;3rd: +1 Racial Action Point">
+                    <figcaption>Dragonborn</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Aasimar.png" alt="Aasimar Icon"
+                        title="1st: +1 Heal&#10;2nd: +1 Wisdom&#10;3rd: +1 Racial Action Point">
+                    <figcaption>Aasimar</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Drow.png" alt="Drow Icon"
+                        title="1st: +1 Search&#10;2nd: +1 Intelligence&#10;3rd: +1 Racial Action Point">
+                    <figcaption>Drow</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Gnome.png" alt="Gnome Icon"
+                        title="1st: +1 Use Magic Device&#10;2nd: +1 Intelligence&#10;3rd: +1 Racial Action Point">
+                    <figcaption>Gnome</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Half-Elf.png" alt="Half-Elf Icon"
+                        title="1st: +1 Diplomacy&#10;2nd: +1 Charisma&#10;3rd: +1 Racial Action Point">
+                    <figcaption>Half-Elf</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Half-Orc.png" alt="Half-Orc Icon"
+                        title="1st: +1 Intimidate&#10;2nd: +1 Strength&#10;3rd: +1 Racial Action Point">
+                    <figcaption>Half-Orc</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Shifter.png" alt="Shifter Icon"
+                        title="1st: +1 Spot&#10;2nd: +1 Dexterity&#10;3rd: +1 Racial Action Point">
+                    <figcaption>Shifter</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Tiefling.png" alt="Tiefling Icon"
+                        title="1st: +1 Spellcraft&#10;2nd: +1 Charisma&#10;3rd: +1 Racial Action Point">
+                    <figcaption>Tiefling</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Warforged.png" alt="Warforged Icon"
+                        title="1st: +1 Repair&#10;2nd: +1 Constitution&#10;3rd: +1 Racial Action Point">
+                    <figcaption>Warforged</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="" alt="" title="">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="" alt="" title="">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="" alt="" title="">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+        </div>
+        <!--end of row races icons-->
+        <!--iconic icons-->
+        <div class="row text-center">
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Aasimar_Scourge_race_icon.png" alt="Aasimar Scourge Icon"
+                        title="+1 Fortitude Save per time this feat has been acquired up to 3">
+                    <figcaption>Aasimar Scourge</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Bladeforged_race_icon.png" alt="Bladeforged Icon"
+                        title="+5% Fortification per stack of this Past Life">
+                    <figcaption>Bladeforged</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Deep_Gnome_race_icon.png" alt="Deep Gnome Icon"
+                        title="+3 Magical Resistance Rating (MRR) per stack of this Past Life">
+                    <figcaption>Deep Gnome</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Purple_Dragon_Knight_race_icon.png"
+                        alt="Purple Dragon Knight Icon"
+                        title="+3 Physical Resistance Rating (PRR) per stack of this Past Life">
+                    <figcaption>Purple Dragon Knight</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Razorclaw_Shifter_race_icon.png" alt="Razorclaw Shifter Icon"
+                        title="+1 Will Save per Stack of this Past Life (max 3)">
+                    <figcaption>Razorclaw Shifter</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Tiefling_Scoundrel_race_icon.png" alt="Tiefling Scoundrel Icon"
+                        title="+1 Reflex Save per Stack of this Past Life (max 3)">
+                    <figcaption>Tiefling Scoundrel</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Shadar-Kai_race_icon.png" alt="Shadar-Kai Icon"
+                        title="+1% Dodge per stack of this Past Life">
+                    <figcaption>Shadar-Kai</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Morninglord_race_icon.png" alt="Morninglord Icon"
+                        title="+3 Positive Spell Power per stack of this Past Life">
+                    <figcaption>Morninglord</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="" alt="" title="">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="" alt="" title="">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="" alt="" title="">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="" alt="" title="">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="" alt="" title="">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="" alt="" title="">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="" alt="" title="">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="" alt="" title="">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+
+        </div>
+        <!--end of row iconic icons-->
+        <!--epic icons-->
+        <div class="row text-center">
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Energy_Criticals_icon.png" alt="Energy Criticals Icon"
+                        title="+1% Absorption of Acid, Cold, Electric, and Fire damage per stack of this past life">
+                    <figcaption>Energy Criticals</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Enchant_Weapon_icon.png" alt="Enchant Weapon Icon"
+                        title="+1% Absorption of Acid, Cold, Electric, and Fire damage per stack of this past life">
+                    <figcaption>Enchant Weapon</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Arcane_Alacrity_icon.png" alt="Arcane Alacrity Icon"
+                        title="+1% Absorption of Acid, Cold, Electric, and Fire damage per stack of this past life">
+                    <figcaption>Arcane Alacrity</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Ancient_Knowledge_icon.png" alt="Ancient Knowledge Icon"
+                        title="+1% Absorption of Acid, Cold, Electric, and Fire damage per stack of this past life">
+                    <figcaption>Ancient Knowledge</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Power_Over_Life_and_Death_icon.png"
+                        alt="Power Over Life and Death Icon" title="+3 PRR per stack of this Past Life">
+                    <figcaption>Power Over Life and Death</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Brace_icon.png" alt="Brace Icon"
+                        title="+3 PRR per stack of this Past Life">
+                    <figcaption>Brace</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Block_Energy_icon.png" alt="Block Energy Icon"
+                        title="+3 PRR per stack of this Past Life">
+                    <figcaption>Block Energy</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Ancient_Blessings_icon.png" alt="Ancient Blessing Icon"
+                        title="+3 PRR per stack of this Past Life">
+                    <figcaption>Ancient Blessing</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Doublestrike_icon.png" alt="Doublestrike Icon"
+                        title="+2 AC per stack of this Past Life and +1 AC per ten character levels">
+                    <figcaption>Doublestrike</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Skill_Mastery_icon.png" alt="Skill Mastery Icon"
+                        title="+2 AC per stack of this Past Life and +1 AC per ten character levels">
+                    <figcaption>Skill Mastery</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Fortification_icon.png" alt="Foritification Icon"
+                        title="+2 AC per stack of this Past Life and +1 AC per ten character levels">
+                    <figcaption>Fortification</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Ancient_Tactics_icon.png" alt="Ancient Tactics Icon"
+                        title="+2 AC per stack of this Past Life and +1 AC per ten character levels">
+                    <figcaption>Ancient Tactics</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Doubleshot_icon.png" alt="Doubleshot Icon"
+                        title="+3 maximum HP and +4 per ten character levels">
+                    <figcaption>Doubleshot</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Fast_Healing_icon.png" alt="Fast Healing Icon"
+                        title="+3 maximum HP and +4 per ten character levels">
+                    <figcaption>Fast Healing</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Colors_of_the_Queen_icon.png" alt="Colors of the Queen Icon"
+                        title="+3 maximum HP and +4 per ten character levels">
+                    <figcaption>Colors of the Queen</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img class="classImg" src="assets/Ancient_Power_icon.png" alt="Ancient Power Icon"
+                        title="+3 maximum HP and +4 per ten character levels">
+                    <figcaption>Ancient Power</figcaption>
+                </figure>
+            </div>
+        </div>
+        <!--end of row epic icons-->
+
+        <div class="row" id="planAndCalculationRow">
+            <div class="col-sm-6" id="defineReincarnations">
+                <h4>Plan your Reincarnations</h4>
+                <div class="row">
+                    <div class="col-sm-6" id="firstColumnReincarnationSelects">
+                        <form>
+                            <div class="form-group row">
+                                <label class="col-sm-6 col-form-label" for="reincarnation001">1st reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation001"
+                                        name="reincarnation001">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation002">2nd reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation002"
+                                        name="reincarnation002">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation003">3rd reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation003"
+                                        name="reincarnation003">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation004">4th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation004"
+                                        name="reincarnation004">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation005">5th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation005"
+                                        name="reincarnation005">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation006">6th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation006"
+                                        name="reincarnation006">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation007">7th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation007"
+                                        name="reincarnation007">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation008">8th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation008"
+                                        name="reincarnation008">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation009">9th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation009"
+                                        name="reincarnation009">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation010">10th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation010"
+                                        name="reincarnation010">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation011">11th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation011"
+                                        name="reincarnation011">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation012">12th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation012"
+                                        name="reincarnation012">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation013">13th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation013"
+                                        name="reincarnation013">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation014">14th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation014"
+                                        name="reincarnation014">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation015">15th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation015"
+                                        name="reincarnation015">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation016">16th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation016"
+                                        name="reincarnation016">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation017">17th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation017"
+                                        name="reincarnation017">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation018">18th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation018"
+                                        name="reincarnation018">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation019">19th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation019"
+                                        name="reincarnation019">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation020">20th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation020"
+                                        name="reincarnation020">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation021">21st reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation021"
+                                        name="reincarnation021">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation022">22nd reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation022"
+                                        name="reincarnation022">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation023">23rd reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation023"
+                                        name="reincarnation023">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation024">24th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation024"
+                                        name="reincarnation024">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation025">25th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation025"
+                                        name="reincarnation025">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation026">26th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation026"
+                                        name="reincarnation026">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation027">27th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation027"
+                                        name="reincarnation027">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation028">28th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation028"
+                                        name="reincarnation028">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation029">29th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation029"
+                                        name="reincarnation029">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation030">30th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation030"
+                                        name="reincarnation030">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation031">31st reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation031"
+                                        name="reincarnation031">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation032">32nd reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation032"
+                                        name="reincarnation032">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation033">33rd reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation033"
+                                        name="reincarnation033">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation034">34th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation034"
+                                        name="reincarnation034">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation035">35th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation035"
+                                        name="reincarnation035">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation036">36th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation036"
+                                        name="reincarnation036">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation037">37th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation037"
+                                        name="reincarnation037">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation038">38th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation038"
+                                        name="reincarnation038">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation039">39th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation039"
+                                        name="reincarnation039">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation040">40th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation040"
+                                        name="reincarnation040">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation041">41st reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation041"
+                                        name="reincarnation041">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation042">42nd reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation042"
+                                        name="reincarnation042">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation043">43rd reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation043"
+                                        name="reincarnation043">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation044">44th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation044"
+                                        name="reincarnation044">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation045">45th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation045"
+                                        name="reincarnation045">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation046">46th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation046"
+                                        name="reincarnation046">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation047">47th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation047"
+                                        name="reincarnation047">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation048">48th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation048"
+                                        name="reincarnation048">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation049">49th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation049"
+                                        name="reincarnation049">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation050">50th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation050"
+                                        name="reincarnation050">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation051">51st reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation051"
+                                        name="reincarnation051">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation052">52nd reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation052"
+                                        name="reincarnation052">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation053">53rd reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation053"
+                                        name="reincarnation053">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation054">54th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation054"
+                                        name="reincarnation054">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation055">55th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation055"
+                                        name="reincarnation055">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation056">56th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation056"
+                                        name="reincarnation056">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation057">57th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation057"
+                                        name="reincarnation057">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation058">58th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation058"
+                                        name="reincarnation058">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation059">59th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation059"
+                                        name="reincarnation059">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation060">60th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation060"
+                                        name="reincarnation060">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation061">61st reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation061"
+                                        name="reincarnation061">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation062">62nd reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation062"
+                                        name="reincarnation062">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation063">63rd reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation063"
+                                        name="reincarnation063">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation064">64th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation064"
+                                        name="reincarnation064">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation065">65th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation065"
+                                        name="reincarnation065">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation066">66th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation066"
+                                        name="reincarnation066">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation067">67th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation067"
+                                        name="reincarnation067">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation068">68th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation068"
+                                        name="reincarnation068">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation069">69th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation069"
+                                        name="reincarnation069">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation070">70th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation070"
+                                        name="reincarnation070">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation071">71st reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation071"
+                                        name="reincarnation071">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation072">72nd reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation072"
+                                        name="reincarnation072">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation073">73rd reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation073"
+                                        name="reincarnation073">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation074">74th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation074"
+                                        name="reincarnation074">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation075">75th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation075"
+                                        name="reincarnation075">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation076">76th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation076"
+                                        name="reincarnation076">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation077">77th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation077"
+                                        name="reincarnation077">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation078">78th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation078"
+                                        name="reincarnation078">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-6" id="secondColumnReincarnationSelects">
+                        <form>
+                            <div class="form-group row">
+                                <label class="col-sm-6 col-form-label" for="reincarnation079">79th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation079"
+                                        name="reincarnation079">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation080">80th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation080"
+                                        name="reincarnation080">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation081">81st reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation081"
+                                        name="reincarnation081">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation082">82nd reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation082"
+                                        name="reincarnation082">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation083">83rd reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation083"
+                                        name="reincarnation083">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation084">84th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation084"
+                                        name="reincarnation084">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation085">85th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation085"
+                                        name="reincarnation085">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation086">86th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation086"
+                                        name="reincarnation086">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation087">87th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation087"
+                                        name="reincarnation087">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation088">88th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation088"
+                                        name="reincarnation088">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation089">89th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation089"
+                                        name="reincarnation089">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation090">90th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation090"
+                                        name="reincarnation090">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation091">91st reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation091"
+                                        name="reincarnation091">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation092">92nd reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation092"
+                                        name="reincarnation092">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation093">93rd reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation093"
+                                        name="reincarnation093">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation094">94th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation094"
+                                        name="reincarnation094">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation095">95th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation095"
+                                        name="reincarnation095">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation096">96th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation096"
+                                        name="reincarnation096">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation097">97th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation097"
+                                        name="reincarnation097">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation098">98th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation098"
+                                        name="reincarnation098">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation099">99th reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation099"
+                                        name="reincarnation099">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation100">100th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation100"
+                                        name="reincarnation100">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation101">101st
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation101"
+                                        name="reincarnation101">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation102">102nd
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation102"
+                                        name="reincarnation102">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation103">103rd
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation103"
+                                        name="reincarnation103">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation104">104th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation104"
+                                        name="reincarnation104">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation105">105th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation105"
+                                        name="reincarnation105">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation106">106th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation106"
+                                        name="reincarnation106">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation107">107th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation107"
+                                        name="reincarnation107">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation108">108th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation108"
+                                        name="reincarnation108">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation109">109th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation109"
+                                        name="reincarnation109">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation110">110th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation110"
+                                        name="reincarnation110">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation111">111th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation111"
+                                        name="reincarnation111">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation112">112th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation112"
+                                        name="reincarnation112">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation113">113th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation113"
+                                        name="reincarnation113">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation114">114th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation114"
+                                        name="reincarnation114">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation115">115th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation115"
+                                        name="reincarnation115">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation116">116th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation116"
+                                        name="reincarnation116">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation117">117th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation117"
+                                        name="reincarnation117">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation118">118th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation118"
+                                        name="reincarnation118">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation119">119th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation119"
+                                        name="reincarnation119">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation120">120th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation120"
+                                        name="reincarnation120">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation121">121st
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation121"
+                                        name="reincarnation121">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation122">122nd
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation122"
+                                        name="reincarnation122">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation123">123rd
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation123"
+                                        name="reincarnation123">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation124">124th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation124"
+                                        name="reincarnation124">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation125">125th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation125"
+                                        name="reincarnation125">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation126">126th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation126"
+                                        name="reincarnation126">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation127">127th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation127"
+                                        name="reincarnation127">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation128">128th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation128"
+                                        name="reincarnation128">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation129">129th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation129"
+                                        name="reincarnation129">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation130">130th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation130"
+                                        name="reincarnation130">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation131">131st
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation131"
+                                        name="reincarnation131">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation132">132nd
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation132"
+                                        name="reincarnation132">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation133">133rd
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation133"
+                                        name="reincarnation133">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation134">134th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation134"
+                                        name="reincarnation134">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation135">135th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation135"
+                                        name="reincarnation135">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation136">136th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation136"
+                                        name="reincarnation136">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation137">137th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation137"
+                                        name="reincarnation137">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation138">138th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation138"
+                                        name="reincarnation138">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation139">139th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation139"
+                                        name="reincarnation139">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation140">140th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation140"
+                                        name="reincarnation140">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation141">141st
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation141"
+                                        name="reincarnation141">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation142">142nd
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation142"
+                                        name="reincarnation142">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation143">143rd
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation143"
+                                        name="reincarnation143">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation144">144th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation144"
+                                        name="reincarnation144">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation145">145th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation145"
+                                        name="reincarnation145">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation146">146th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation146"
+                                        name="reincarnation146">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation147">147th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation147"
+                                        name="reincarnation147">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation148">148th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation148"
+                                        name="reincarnation148">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation149">149th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation149"
+                                        name="reincarnation149">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation150">150th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation150"
+                                        name="reincarnation150">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation151">151st
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation151"
+                                        name="reincarnation151">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation152">152nd
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation152"
+                                        name="reincarnation152">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation153">153rd
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation153"
+                                        name="reincarnation153">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation154">154th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation154"
+                                        name="reincarnation154">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation155">155th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation155"
+                                        name="reincarnation155">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-6 col-form-label" for="reincarnation156">156th
+                                    reincarnation</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select form-select-sm reincarnationSelect"
+                                        aria-label=".form-select-sm example" id="reincarnation156"
+                                        name="reincarnation156">
+                                        <option value="defaultClassOption" disabled selected value>-
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <!--end of col define reincarnations-->
+
+            <div class="col-sm-6" id="passiveBonuses">
+                <h4>Passive Past Lives Feats Calculation</h4>
+                <div class="row">
+                    <div class="col">
+                    </div>
+                    <div class="col-sm-4 col-form-label" id="numberOfReincarnationsSelectBox">
+                        <label for="numberOfReincarnationsSelect">Number of reincarnations</label>
+
+                    </div>
+                    <div class="col">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm"></div>
+                    <div class="col-sm-2">
+                        <select class="form-select form-select-sm" name="numberOfReincarnationsSelect"
+                            id="numberOfReincarnationsSelect">
+                        </select>
+                    </div>
+                    <div class="col-sm"></div>
+                </div>
+                <div class="row">
+                    <p></p>
+                    <div class="col">
+                    </div>
+                    <div class="col-sm-10" id="passiveFeatsCalculation">
+                        <ul>
+
+                        </ul>
+                    </div>
+                    <div class="col">
+                    </div>
+                </div>
+            </div>
+            <!--end of col calculation-->
+        </div>
+        <!--end of row with calculation-->
+    </div>
+    <!--end of the container-->
+
+    <footer class="page-footer font-small pt-4 text-center">
+        <p>
+            2021 Made by Mordhaak of Argonnessen
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
