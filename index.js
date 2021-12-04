@@ -126,10 +126,10 @@ function textForPastLivePassiveBonus(pastLivePassiveBonus) {
             text = "bonus to maximum spell points: +"
             break;
         case "bonusIntelligenceSkills":
-            text = "a stacking bonus to all intelligence based skills: +"
+            text = "bonus to all intelligence based skills: +"
             break;
         case "bonusUmd":
-            text = "a stacking bonus to Use Magic Device Skill: +"
+            text = "bonus to Use Magic Device Skill: +"
             break;
         case "bonusHitPoints":
             text = "bonus to total hit points: +"
@@ -369,7 +369,7 @@ function calculateReincarnations() {
                         calculatedHeroicPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
-                        console.log("error: number of human reincarnation is  not 1, 2 or 3");
+                        console.log("error: number of human reincarnation is not 1, 2 or 3");
                 }
                 break;
             case "Dwarf":
@@ -387,7 +387,7 @@ function calculateReincarnations() {
                         calculatedHeroicPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
-                        console.log("error: number of dwarf reincarnation is  not 1, 2 or 3");
+                        console.log("error: number of dwarf reincarnation is not 1, 2 or 3");
                 }
                 break;
             case "Elf":
@@ -405,7 +405,7 @@ function calculateReincarnations() {
                         calculatedHeroicPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
-                        console.log("error: number of elf reincarnation is  not 1, 2 or 3");
+                        console.log("error: number of elf reincarnation is not 1, 2 or 3");
                 }
                 break;
             case "Halfling":
@@ -674,7 +674,7 @@ function calculateReincarnations() {
     };
 }
 
-// 
+//
 function createReincarnationOptions() {
     // iterate over all selects
     reincarnationOptions.forEach(function (reincarnationOptionId, reincarnationOptionIndex) {
