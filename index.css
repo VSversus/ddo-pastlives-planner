@@ -4,23 +4,29 @@ body {
     min-height: 1500px;
 }
 
-h1 {
-    text-align: center;
-    padding: 60px;
-    padding-top: 100px;
-    color: brown;
-}
-
 h2, h3, h4, h5, h6 {
     text-align: center;
     padding: 40px;
     color: brown;
 }
 
+.headerRow {
+    text-align: center;
+    padding: 60px;
+    padding-top: 100px;
+    color: brown;
+}
+
 .classImg {
     width: 54px;
     min-width: 54px;
-  }
+}
+
+.iconHeader {
+    font-weight: bold;
+    margin-bottom: 1px;
+    font-size: 80%;
+}
 
 figcaption {
     font-size: 65%;
@@ -28,13 +34,6 @@ figcaption {
 
 #tooltipNotification {
     font-style: italic;
-    border-style: solid;
-    border-left: transparent;
-    border-right: transparent;
-    border-bottom: transparent;
-    border-top: transparent;
-    border-width: 1px;
-    border-color: brown;
     padding-top: 50px;
 }
 
