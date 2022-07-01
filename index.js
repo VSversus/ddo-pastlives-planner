@@ -3,7 +3,7 @@
 let calculatedHeroicPastLivesBonuses;
 let reincarnationOptions = [];
 let numberOfReincarnations = 1;
-let maxNumberOfReincarnations = 159;
+let maxNumberOfReincarnations = 162;
 let reincarnatedClassesArray = [];
 
 let optionsArray = [
