@@ -3,7 +3,7 @@
 let calculatedHeroicPastLivesBonuses;
 let reincarnationOptions = [];
 let numberOfReincarnations = 1;
-let maxNumberOfReincarnations = 156;
+let maxNumberOfReincarnations = 159;
 let reincarnatedClassesArray = [];
 
 let optionsArray = [
@@ -35,6 +35,7 @@ let optionsArray = [
     "Shifter",
     "Tiefling",
     "Warforged",
+    "Tabaxi",
     "Aasimar Scourge",
     "Bladeforged",
     "Deep Gnome",
@@ -43,6 +44,7 @@ let optionsArray = [
     "Tiefling Scoundrel",
     "Shadar-Kai",
     "Morninglord",
+    "Tabaxi Trailblazer",
     "Energy Criticals",
     "Enchant Weapon",
     "Arcane Alacrity",
@@ -95,6 +97,7 @@ let heroicPastLivesPassiveBonuses = {
     "bonusDiplomacy": 0,
     "bonusIntimidate": 0,
     "bonusRepair": 0,
+    "bonusTumble": 0,
     "bonusWisdom": 0,
     "bonusCharisma": 0,
     "bonusIntelligence": 0,
@@ -215,6 +218,9 @@ function textForPastLivePassiveBonus(pastLivePassiveBonus) {
         case "bonusIntimidate":
             text = "bonus to Intimidate: +"
             break;
+        case "bonusTumble":
+            text = "bonus to Tumble: +"
+            break;
         case "bonusCharisma":
             text = "bonus to Charisma: +"
             break;
@@ -293,6 +299,7 @@ function calculateReincarnations() {
     let shifterReinc = 0;
     let tieflingReinc = 0;
     let warforgedReinc = 0;
+    let tabaxiReinc = 0;
     // calculate only so many past lives, that was chosen
     for (let i = 0; i < numberOfReincarnations; i++) {
         switch (reincarnatedClassesArray[i]) {
@@ -588,6 +595,24 @@ function calculateReincarnations() {
                         console.log("error: number of warforged reincarnation is  not 1, 2 or 3");
                 }
                 break;
+            case "Tabaxi":
+                switch (tabaxiReinc) {
+                    case 0:
+                        tabaxiReinc += 1;
+                        calculatedHeroicPastLivesBonuses.bonusTumble += 1;
+                        break;
+                    case 1:
+                        tabaxiReinc += 1;
+                        calculatedHeroicPastLivesBonuses.bonusDexterity += 1;
+                        break;
+                    case 2:
+                        tabaxiReinc += 1;
+                        calculatedHeroicPastLivesBonuses.bonusRacialActionPoint += 1;
+                        break;
+                    default:
+                        console.log("error: number of warforged reincarnation is  not 1, 2 or 3");
+                }
+                break;
             case "Aasimar Scourge":
                 calculatedHeroicPastLivesBonuses.bonusFortitudeSave += 1;
                 break;
@@ -611,6 +636,9 @@ function calculateReincarnations() {
                 break;
             case "Morninglord":
                 calculatedHeroicPastLivesBonuses.bonusPositiveSpellPower += 3;
+                break;
+            case "Tabaxi Trailblazer":
+                calculatedHeroicPastLivesBonuses.bonusSavedTrap += 1;
                 break;
             case "Energy Criticals":
                 calculatedHeroicPastLivesBonuses.bonusElementAbsorption += 1;
