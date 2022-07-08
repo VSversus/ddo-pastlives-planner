@@ -3,7 +3,7 @@
 let calculatedHeroicPastLivesBonuses;
 let reincarnationOptions = [];
 let numberOfReincarnations = 1;
-let maxNumberOfReincarnations = 162;
+let maxNumberOfReincarnations = 165;
 let reincarnatedClassesArray = [];
 
 let optionsArray = [
@@ -49,6 +49,7 @@ let optionsArray = [
     "Enchant Weapon",
     "Arcane Alacrity",
     "Ancient Knowledge",
+    "Eclipse Power",
     "Power Over Life and Death",
     "Brace",
     "Block Energy",
@@ -126,7 +127,7 @@ function textForPastLivePassiveBonus(pastLivePassiveBonus) {
             text = "bonus to DC's of your Transmutation spells: +";
             break;
         case "maximumSpellPoint":
-            text = "bonus to maximum spell points: +"
+            text = "bonus to maximum spell points (SP): +"
             break;
         case "bonusIntelligenceSkills":
             text = "bonus to all intelligence based skills: +"
@@ -135,7 +136,7 @@ function textForPastLivePassiveBonus(pastLivePassiveBonus) {
             text = "bonus to Use Magic Device Skill: +"
             break;
         case "bonusHitPoints":
-            text = "bonus to total hit points: +"
+            text = "bonus to total hit points (HP): +"
             break;
         case "bonusSavesEnchIll":
             text = "bonus to saves vs. enchantments and illusions: +"
@@ -306,7 +307,7 @@ function calculateReincarnations() {
             case "-":
                 break;
             case "Alchemist":
-                calculatedHeroicPastLivesBonuses.bonusDcTrasmutation += 2;
+                calculatedHeroicPastLivesBonuses.bonusDcTrasmutation += 1;
                 calculatedHeroicPastLivesBonuses.maximumSpellPoint += 20;
                 break;
             case "Artificer":
@@ -652,6 +653,9 @@ function calculateReincarnations() {
             case "Ancient Knowledge":
                 calculatedHeroicPastLivesBonuses.bonusElementAbsorption += 1;
                 break;
+            case "Eclipse Power":
+                calculatedHeroicPastLivesBonuses.bonusElementAbsorption += 1;
+                break;
             case "Power Over Life and Death":
                 calculatedHeroicPastLivesBonuses.bonusPrr += 3;
                 break;
@@ -700,6 +704,48 @@ function calculateReincarnations() {
                 console.log("error: class not found in the switch for feats calculation" + reincarnatedClassesArray[i]);
         }
     };
+}
+
+function generateSelectBoxes(minIndex, maxIndex, idOfColumn) {
+    for (let index = minIndex; index <= maxIndex; index++) {
+        // <label class="col-sm-6 col-form-label" for="reincarnation001">1st reincarnation</label>
+        var label = document.createElement('label');
+        label.textContent = "reincarnation " + index;
+        label.className = "col-sm-5 col-form-label";
+        label.htmlFor = "reincarnation" + index;
+        document.getElementById(idOfColumn).appendChild(label);
+
+        /*
+            <div class="col-sm-6">
+                <select class="form-select form-select-sm reincarnationSelect"
+                    aria-label=".form-select-sm example" id="reincarnation001"
+                    name="reincarnation001">
+                    <option value="defaultClassOption" disabled selected value>-
+                    </option>
+                </select>
+            </div>
+        */
+
+        // div
+        var div = document.createElement("div");
+        div.className = "col-sm-7";
+        
+        // select
+        var select = document.createElement("select");
+        select.className = "form-select form-select-sm reincarnationSelect";
+        select.ariaLabel = ".form-select-sm example";
+        select.id = "reincarnation" + index;
+        select.name = "reincarnation" + index;
+        
+        // option
+        var option = document.createElement("option");
+        option.value = "defaultClassOption";
+        option.innerText = "-"
+
+        select.append(option);
+        div.appendChild(select);
+        document.getElementById(idOfColumn).appendChild(div);     
+    }
 }
 
 //
@@ -831,6 +877,10 @@ function changeSelectColorForDefaultValue() {
     };
 }
 
+generateSelectBoxes(1, 42, "columnFormOne");
+generateSelectBoxes(43, 84, "columnFormTwo");
+generateSelectBoxes(85, 126, "columnFormThree");
+generateSelectBoxes(127, 165, "columnFormFour");
 addOptionsForNumberOfReincarnationsSelect();
 saveReincarnationOptionsIds();
 createEventListenerForNumberofReincarnationsSelect();

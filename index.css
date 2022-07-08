@@ -53,20 +53,14 @@ figcaption {
     text-align: left;
 }
 
-#defineReincarnations {
+.brownBorder {
     border-style: solid;
     border-width: 1px;
     border-color: brown;
+    margin-bottom: -1px;
     font-size: 80%;
     padding: 10px;
-}
-
-#passiveBonuses {
-    border-style: solid;
-    border-left: transparent;
-    border-width: 1px;
-    border-color: brown;
-    font-size: 80%;
+    padding-bottom: 30px;
 }
 
 select option {
