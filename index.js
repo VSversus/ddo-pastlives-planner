@@ -22,6 +22,9 @@ let optionsArray = [
     "Sorcerer",
     "Warlock",
     "Wizard",
+    "Dark Apostate",
+    "Stormsinger",
+    "Sacred Fist",
     "Human",
     "Dwarf",
     "Elf",
@@ -80,7 +83,7 @@ let heroicPastLivesPassiveBonuses = {
     "bonusAttackRoll": 0,
     "bonusDcTactical": 0,
     "bonusDamageRolls": 0,
-    "healAmp": 0,
+    "bonusPositiveHealAmp": 0,
     "bonusDmgRanged": 0,
     "elementResistance": 0,
     "bonusSavedTrap": 0,
@@ -118,6 +121,10 @@ let heroicPastLivesPassiveBonuses = {
     "bonusAcPerTen": 0,
     "bonusHpEpicFlat": 0,
     "bonusHpEpicPerTen": 0,
+    "bonusNegativeHealAmp": 0,
+    "bonusNegativeSpellPower": 0,
+    "bonusLightningSpellPower": 0,
+    "bonusSonicSpellPower": 0,
 }
 
 function textForPastLivePassiveBonus(pastLivePassiveBonus) {
@@ -168,8 +175,8 @@ function textForPastLivePassiveBonus(pastLivePassiveBonus) {
         case "bonusDamageRolls":
             text = "bonus to damage rolls: +"
             break;
-        case "healAmp":
-            text = "bonus to healing amplification: +"
+        case "bonusPositiveHealAmp":
+            text = "bonus to positive healing amplification: +"
             break;
         case "bonusDmgRanged":
             text = "bonus to damage with ranged weapons (not thrown): +"
@@ -279,6 +286,18 @@ function textForPastLivePassiveBonus(pastLivePassiveBonus) {
         case "bonusRepair":
             text = "bonus to Repair: +"
             break;
+        case "bonusNegativeHealAmp":
+            text = "bonus to negative healing amplification: +"
+            break;
+        case "bonusNegativeSpellPower":
+            text = "bonus to negative spell power: +"
+            break;
+        case "bonusLightningSpellPower":
+            text = "bonus to lightning spell power: +"
+            break;
+        case "bonusSonicSpellPower":
+            text = "bonus to sonic spell power: +"
+            break;
         default:
             text = "error (text for feat not found) "
     }
@@ -341,7 +360,7 @@ function calculateReincarnations() {
                 calculatedHeroicPastLivesBonuses.bonusDamageRolls += 1;
                 break;
             case "Paladin":
-                calculatedHeroicPastLivesBonuses.healAmp += 10;
+                calculatedHeroicPastLivesBonuses.bonusPositiveHealAmp += 10;
                 break;
             case "Ranger":
                 calculatedHeroicPastLivesBonuses.bonusDmgRanged += 2;
@@ -361,6 +380,18 @@ function calculateReincarnations() {
             case "Wizard":
                 calculatedHeroicPastLivesBonuses.bonusSpellPen += 2;
                 calculatedHeroicPastLivesBonuses.bonusDcWands += 2;
+                break;
+            case "Dark Apostate":
+                calculatedHeroicPastLivesBonuses.bonusNegativeHealAmp += 5;
+                calculatedHeroicPastLivesBonuses.bonusNegativeSpellPower += 5;
+                break;
+            case "Stormsinger":
+                calculatedHeroicPastLivesBonuses.bonusLightningSpellPower += 5;
+                calculatedHeroicPastLivesBonuses.bonusSonicSpellPower += 5;
+                break;
+            case "Sacred Fist":
+                calculatedHeroicPastLivesBonuses.bonusPositiveHealAmp += 5;
+                calculatedHeroicPastLivesBonuses.bonusPositiveSpellPower += 5;
                 break;
             case "Human":
                 switch (humanReinc) {
@@ -729,14 +760,14 @@ function generateSelectBoxes(minIndex, maxIndex, idOfColumn) {
         // div
         var div = document.createElement("div");
         div.className = "col-sm-7";
-        
+
         // select
         var select = document.createElement("select");
         select.className = "form-select form-select-sm reincarnationSelect";
         select.ariaLabel = ".form-select-sm example";
         select.id = "reincarnation" + index;
         select.name = "reincarnation" + index;
-        
+
         // option
         var option = document.createElement("option");
         option.value = "defaultClassOption";
@@ -744,14 +775,14 @@ function generateSelectBoxes(minIndex, maxIndex, idOfColumn) {
 
         select.append(option);
         div.appendChild(select);
-        document.getElementById(idOfColumn).appendChild(div);     
+        document.getElementById(idOfColumn).appendChild(div);
     }
 }
 
 //
 function createReincarnationOptions() {
     // iterate over all selects
-    reincarnationOptions.forEach(function (reincarnationOptionId, reincarnationOptionIndex) {
+    reincarnationOptions.forEach(function (reincarnationOptionId) {
         // every option in array
         optionsArray.forEach(function (optionText) {
             let newOption = new Option(optionText, optionText);
@@ -763,8 +794,7 @@ function createReincarnationOptions() {
 
 // all actions when reincarnation is chosen
 function createEventListenerForReincarnationOptions() {
-    reincarnationOptions.forEach(function (reincarnationOptionId, reincarnationOptionIndex) {
-        //let currentIndex = reincarnationOptions.indexOf(item, 0)
+    reincarnationOptions.forEach(function (reincarnationOptionId) {
         let option = document.getElementById(reincarnationOptionId);
         option.addEventListener('change', event => {
             saveReincarnatedClasses();
@@ -877,10 +907,10 @@ function changeSelectColorForDefaultValue() {
     };
 }
 
-generateSelectBoxes(1, 42, "columnFormOne");
-generateSelectBoxes(43, 84, "columnFormTwo");
-generateSelectBoxes(85, 126, "columnFormThree");
-generateSelectBoxes(127, 165, "columnFormFour");
+generateSelectBoxes(1, 44, "columnFormOne");
+generateSelectBoxes(45, 88, "columnFormTwo");
+generateSelectBoxes(89, 132, "columnFormThree");
+generateSelectBoxes(133, 174, "columnFormFour");
 addOptionsForNumberOfReincarnationsSelect();
 saveReincarnationOptionsIds();
 createEventListenerForNumberofReincarnationsSelect();
