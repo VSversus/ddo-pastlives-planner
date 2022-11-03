@@ -1,10 +1,12 @@
 "use strict";
 
-let calculatedHeroicPastLivesBonuses;
+let calculatedPastLivesBonuses;
 let reincarnationOptions = [];
 let numberOfReincarnations = 1;
 let maxNumberOfReincarnations = 165;
 let reincarnatedClassesArray = [];
+const numberOfHeroicClassesInDDO = 15;
+const numberOfRacesInDDO = 14;
 
 let optionsArray = [
     "Alchemist",
@@ -67,7 +69,7 @@ let optionsArray = [
     "Ancient Power"
 ]
 
-let heroicPastLivesPassiveBonuses = {
+let pastLivesPassiveBonuses = {
     "bonusDcTrasmutation": 0,
     "maximumSpellPoint": 0,
     "bonusIntelligenceSkills": 0,
@@ -125,6 +127,8 @@ let heroicPastLivesPassiveBonuses = {
     "bonusNegativeSpellPower": 0,
     "bonusLightningSpellPower": 0,
     "bonusSonicSpellPower": 0,
+    "bonusDestinyPoint": 0,
+    "bonusAllSkills": 0
 }
 
 function textForPastLivePassiveBonus(pastLivePassiveBonus) {
@@ -298,6 +302,12 @@ function textForPastLivePassiveBonus(pastLivePassiveBonus) {
         case "bonusSonicSpellPower":
             text = "bonus to sonic spell power: +"
             break;
+        case "bonusDestinyPoint":
+            text = 'bonus destiny points: +'
+            break;
+        case "bonusAllSkills":
+            text = 'bonus to all skills: +'
+            break;
         default:
             text = "error (text for feat not found) "
     }
@@ -305,7 +315,7 @@ function textForPastLivePassiveBonus(pastLivePassiveBonus) {
 }
 
 function calculateReincarnations() {
-    calculatedHeroicPastLivesBonuses = Object.create(heroicPastLivesPassiveBonuses);
+    calculatedPastLivesBonuses = Object.create(pastLivesPassiveBonuses);
     let humanReinc = 0;
     let dwarfReinc = 0;
     let halflingReinc = 0;
@@ -320,421 +330,506 @@ function calculateReincarnations() {
     let tieflingReinc = 0;
     let warforgedReinc = 0;
     let tabaxiReinc = 0;
+    let epicReinc = 0;
+    let heroicCompletionistArray = [];
+    let racialCompletionistArray = [];
     // calculate only so many past lives, that was chosen
     for (let i = 0; i < numberOfReincarnations; i++) {
         switch (reincarnatedClassesArray[i]) {
             case "-":
                 break;
             case "Alchemist":
-                calculatedHeroicPastLivesBonuses.bonusDcTrasmutation += 1;
-                calculatedHeroicPastLivesBonuses.maximumSpellPoint += 20;
+                calculatedPastLivesBonuses.bonusDcTrasmutation += 1;
+                calculatedPastLivesBonuses.maximumSpellPoint += 20;
+                heroicCompletionistArray.push('Alchemist');
                 break;
             case "Artificer":
-                calculatedHeroicPastLivesBonuses.bonusIntelligenceSkills += 1;
-                calculatedHeroicPastLivesBonuses.bonusUmd += 1;
+                calculatedPastLivesBonuses.bonusIntelligenceSkills += 1;
+                calculatedPastLivesBonuses.bonusUmd += 1;
+                heroicCompletionistArray.push('Artificer');
                 break;
             case "Barbarian":
-                calculatedHeroicPastLivesBonuses.bonusHitPoints += 10;
+                calculatedPastLivesBonuses.bonusHitPoints += 10;
+                heroicCompletionistArray.push('Barbarian');
                 break;
             case "Bard":
-                calculatedHeroicPastLivesBonuses.bonusSavesEnchIll += 2;
-                calculatedHeroicPastLivesBonuses.bonusBardSongUsage += 1;
+                calculatedPastLivesBonuses.bonusSavesEnchIll += 2;
+                calculatedPastLivesBonuses.bonusBardSongUsage += 1;
+                heroicCompletionistArray.push('Bard');
                 break;
             case "Cleric":
-                calculatedHeroicPastLivesBonuses.bonusDcConjuration += 1;
-                calculatedHeroicPastLivesBonuses.turnUndeadAttempt += 1;
-                calculatedHeroicPastLivesBonuses.turnUndeadHigher += 2;
+                calculatedPastLivesBonuses.bonusDcConjuration += 1;
+                calculatedPastLivesBonuses.turnUndeadAttempt += 1;
+                calculatedPastLivesBonuses.turnUndeadHigher += 2;
+                heroicCompletionistArray.push('Cleric');
                 break;
             case "Druid":
-                calculatedHeroicPastLivesBonuses.bonusSummon += 2;
+                calculatedPastLivesBonuses.bonusSummon += 2;
+                heroicCompletionistArray.push('Druid');
                 break;
             case "Favored Soul":
-                calculatedHeroicPastLivesBonuses.bonusSpellPen += 1;
-                calculatedHeroicPastLivesBonuses.maximumSpellPoint += 20;
+                calculatedPastLivesBonuses.bonusSpellPen += 1;
+                calculatedPastLivesBonuses.maximumSpellPoint += 20;
+                heroicCompletionistArray.push('Favored Soul');
                 break;
             case "Fighter":
-                calculatedHeroicPastLivesBonuses.bonusAttackRoll += 1;
-                calculatedHeroicPastLivesBonuses.bonusDcTactical += 1;
+                calculatedPastLivesBonuses.bonusAttackRoll += 1;
+                calculatedPastLivesBonuses.bonusDcTactical += 1;
+                heroicCompletionistArray.push('Fighter');
                 break;
             case "Monk":
-                calculatedHeroicPastLivesBonuses.bonusDamageRolls += 1;
+                calculatedPastLivesBonuses.bonusDamageRolls += 1;
+                heroicCompletionistArray.push('Monk');
                 break;
             case "Paladin":
-                calculatedHeroicPastLivesBonuses.bonusPositiveHealAmp += 10;
+                calculatedPastLivesBonuses.bonusPositiveHealAmp += 10;
+                heroicCompletionistArray.push('Paladin');
                 break;
             case "Ranger":
-                calculatedHeroicPastLivesBonuses.bonusDmgRanged += 2;
-                calculatedHeroicPastLivesBonuses.elementResistance += 2;
+                calculatedPastLivesBonuses.bonusDmgRanged += 2;
+                calculatedPastLivesBonuses.elementResistance += 2;
+                heroicCompletionistArray.push('Ranger');
                 break;
             case "Rogue":
-                calculatedHeroicPastLivesBonuses.bonusSavedTrap += 2;
-                calculatedHeroicPastLivesBonuses.bonusDmgSneak += 1;
+                calculatedPastLivesBonuses.bonusSavedTrap += 2;
+                calculatedPastLivesBonuses.bonusDmgSneak += 1;
+                heroicCompletionistArray.push('Rogue');
                 break;
             case "Sorcerer":
-                calculatedHeroicPastLivesBonuses.bonusDcEvocation += 1;
-                calculatedHeroicPastLivesBonuses.maximumSpellPoint += 20;
+                calculatedPastLivesBonuses.bonusDcEvocation += 1;
+                calculatedPastLivesBonuses.maximumSpellPoint += 20;
+                heroicCompletionistArray.push('Sorcerer');
                 break;
             case "Warlock":
-                calculatedHeroicPastLivesBonuses.bonusMrr += 3;
+                calculatedPastLivesBonuses.bonusMrr += 3;
+                heroicCompletionistArray.push('Warlock');
                 break;
             case "Wizard":
-                calculatedHeroicPastLivesBonuses.bonusSpellPen += 2;
-                calculatedHeroicPastLivesBonuses.bonusDcWands += 2;
+                calculatedPastLivesBonuses.bonusSpellPen += 2;
+                calculatedPastLivesBonuses.bonusDcWands += 2;
+                heroicCompletionistArray.push('Wizard');
                 break;
             case "Dark Apostate":
-                calculatedHeroicPastLivesBonuses.bonusNegativeHealAmp += 5;
-                calculatedHeroicPastLivesBonuses.bonusNegativeSpellPower += 5;
+                calculatedPastLivesBonuses.bonusNegativeHealAmp += 5;
+                calculatedPastLivesBonuses.bonusNegativeSpellPower += 5;
+                heroicCompletionistArray.push('Cleric');
                 break;
             case "Stormsinger":
-                calculatedHeroicPastLivesBonuses.bonusLightningSpellPower += 5;
-                calculatedHeroicPastLivesBonuses.bonusSonicSpellPower += 5;
+                calculatedPastLivesBonuses.bonusLightningSpellPower += 5;
+                calculatedPastLivesBonuses.bonusSonicSpellPower += 5;
+                heroicCompletionistArray.push('Bard');
                 break;
             case "Sacred Fist":
-                calculatedHeroicPastLivesBonuses.bonusPositiveHealAmp += 5;
-                calculatedHeroicPastLivesBonuses.bonusPositiveSpellPower += 5;
+                calculatedPastLivesBonuses.bonusPositiveHealAmp += 5;
+                calculatedPastLivesBonuses.bonusPositiveSpellPower += 5;
+                heroicCompletionistArray.push('Paladin');
                 break;
             case "Human":
+                racialCompletionistArray.push('Human');
                 switch (humanReinc) {
                     case 0:
                         humanReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusHaggle += 1;
+                        calculatedPastLivesBonuses.bonusHaggle += 1;
                         break;
                     case 1:
                         humanReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusWisdom += 1;
+                        calculatedPastLivesBonuses.bonusWisdom += 1;
                         break;
                     case 2:
                         humanReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusRacialActionPoint += 1;
+                        calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
                         console.log("error: number of human reincarnation is not 1, 2 or 3");
                 }
                 break;
             case "Dwarf":
+                racialCompletionistArray.push('Dwarf');
                 switch (dwarfReinc) {
                     case 0:
                         dwarfReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusBalance += 1;
+                        calculatedPastLivesBonuses.bonusBalance += 1;
                         break;
                     case 1:
                         dwarfReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusConstitution += 1;
+                        calculatedPastLivesBonuses.bonusConstitution += 1;
                         break;
                     case 2:
                         dwarfReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusRacialActionPoint += 1;
+                        calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
                         console.log("error: number of dwarf reincarnation is not 1, 2 or 3");
                 }
                 break;
             case "Elf":
+                racialCompletionistArray.push('Elf');
                 switch (elfReinc) {
                     case 0:
                         elfReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusSpot += 1;
+                        calculatedPastLivesBonuses.bonusSpot += 1;
                         break;
                     case 1:
                         elfReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusDexterity += 1;
+                        calculatedPastLivesBonuses.bonusDexterity += 1;
                         break;
                     case 2:
                         elfReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusRacialActionPoint += 1;
+                        calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
                         console.log("error: number of elf reincarnation is not 1, 2 or 3");
                 }
                 break;
             case "Halfling":
+                racialCompletionistArray.push('Halfling');
                 switch (halflingReinc) {
                     case 0:
                         halflingReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusMoveSilently += 1;
+                        calculatedPastLivesBonuses.bonusMoveSilently += 1;
                         break;
                     case 1:
                         halflingReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusDexterity += 1;
+                        calculatedPastLivesBonuses.bonusDexterity += 1;
                         break;
                     case 2:
                         halflingReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusRacialActionPoint += 1;
+                        calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
                         console.log("error: number of halfling reincarnation is  not 1, 2 or 3");
                 }
                 break;
             case "Dragonborn":
+                racialCompletionistArray.push('Dragonborn');
                 switch (dragonbornReinc) {
                     case 0:
                         dragonbornReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusSpellcraft += 1;
+                        calculatedPastLivesBonuses.bonusSpellcraft += 1;
                         break;
                     case 1:
                         dragonbornReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusCharisma += 1;
+                        calculatedPastLivesBonuses.bonusCharisma += 1;
                         break;
                     case 2:
                         dragonbornReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusRacialActionPoint += 1;
+                        calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
                         console.log("error: number of dragonborn reincarnation is  not 1, 2 or 3");
                 }
                 break;
             case "Aasimar":
+                racialCompletionistArray.push('Aasimar');
                 switch (aasimarReinc) {
                     case 0:
                         aasimarReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusHeal += 1;
+                        calculatedPastLivesBonuses.bonusHeal += 1;
                         break;
                     case 1:
                         aasimarReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusWisdom += 1;
+                        calculatedPastLivesBonuses.bonusWisdom += 1;
                         break;
                     case 2:
                         aasimarReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusRacialActionPoint += 1;
+                        calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
                         console.log("error: number of aasimar reincarnation is  not 1, 2 or 3");
                 }
                 break;
             case "Drow":
+                racialCompletionistArray.push('Drow');
                 switch (drowReinc) {
                     case 0:
                         drowReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusSearch += 1;
+                        calculatedPastLivesBonuses.bonusSearch += 1;
                         break;
                     case 1:
                         drowReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusIntelligence += 1;
+                        calculatedPastLivesBonuses.bonusIntelligence += 1;
                         break;
                     case 2:
                         drowReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusRacialActionPoint += 1;
+                        calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
                         console.log("error: number of drow reincarnation is  not 1, 2 or 3");
                 }
                 break;
             case "Gnome":
+                racialCompletionistArray.push('Gnome');
                 switch (gnomeReinc) {
                     case 0:
                         gnomeReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusUmd += 1;
+                        calculatedPastLivesBonuses.bonusUmd += 1;
                         break;
                     case 1:
                         gnomeReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusIntelligence += 1;
+                        calculatedPastLivesBonuses.bonusIntelligence += 1;
                         break;
                     case 2:
                         gnomeReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusRacialActionPoint += 1;
+                        calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
                         console.log("error: number of gnome reincarnation is  not 1, 2 or 3");
                 }
                 break;
             case "Half-Elf":
+                racialCompletionistArray.push('Half-Elf');
                 switch (halfelfReinc) {
                     case 0:
                         halfelfReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusDiplomacy += 1;
+                        calculatedPastLivesBonuses.bonusDiplomacy += 1;
                         break;
                     case 1:
                         halfelfReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusCharisma += 1;
+                        calculatedPastLivesBonuses.bonusCharisma += 1;
                         break;
                     case 2:
                         halfelfReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusRacialActionPoint += 1;
+                        calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
                         console.log("error: number of halfelf reincarnation is  not 1, 2 or 3");
                 }
                 break;
             case "Half-Orc":
+                racialCompletionistArray.push('Half-Orc');
                 switch (halforcReinc) {
                     case 0:
                         halforcReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusIntimidate += 1;
+                        calculatedPastLivesBonuses.bonusIntimidate += 1;
                         break;
                     case 1:
                         halforcReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusStrength += 1;
+                        calculatedPastLivesBonuses.bonusStrength += 1;
                         break;
                     case 2:
                         halforcReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusRacialActionPoint += 1;
+                        calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
                         console.log("error: number of halforc reincarnation is  not 1, 2 or 3");
                 }
                 break;
             case "Shifter":
+                racialCompletionistArray.push('Shifter');
                 switch (shifterReinc) {
                     case 0:
                         shifterReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusSpot += 1;
+                        calculatedPastLivesBonuses.bonusSpot += 1;
                         break;
                     case 1:
                         shifterReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusDexterity += 1;
+                        calculatedPastLivesBonuses.bonusDexterity += 1;
                         break;
                     case 2:
                         shifterReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusRacialActionPoint += 1;
+                        calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
                         console.log("error: number of shifter reincarnation is  not 1, 2 or 3");
                 }
                 break;
             case "Tiefling":
+                racialCompletionistArray.push('Tiefling');
                 switch (tieflingReinc) {
                     case 0:
                         tieflingReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusSpellcraft += 1;
+                        calculatedPastLivesBonuses.bonusSpellcraft += 1;
                         break;
                     case 1:
                         tieflingReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusCharisma += 1;
+                        calculatedPastLivesBonuses.bonusCharisma += 1;
                         break;
                     case 2:
                         tieflingReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusRacialActionPoint += 1;
+                        calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
                         console.log("error: number of tiefling reincarnation is  not 1, 2 or 3");
                 }
                 break;
             case "Warforged":
+                racialCompletionistArray.push('Warforged');
                 switch (warforgedReinc) {
                     case 0:
                         warforgedReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusRepair += 1;
+                        calculatedPastLivesBonuses.bonusRepair += 1;
                         break;
                     case 1:
                         warforgedReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusConstitution += 1;
+                        calculatedPastLivesBonuses.bonusConstitution += 1;
                         break;
                     case 2:
                         warforgedReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusRacialActionPoint += 1;
+                        calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
                         console.log("error: number of warforged reincarnation is  not 1, 2 or 3");
                 }
                 break;
             case "Tabaxi":
+                racialCompletionistArray.push('Tabaxi');
                 switch (tabaxiReinc) {
                     case 0:
                         tabaxiReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusTumble += 1;
+                        calculatedPastLivesBonuses.bonusTumble += 1;
                         break;
                     case 1:
                         tabaxiReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusDexterity += 1;
+                        calculatedPastLivesBonuses.bonusDexterity += 1;
                         break;
                     case 2:
                         tabaxiReinc += 1;
-                        calculatedHeroicPastLivesBonuses.bonusRacialActionPoint += 1;
+                        calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
                         console.log("error: number of warforged reincarnation is  not 1, 2 or 3");
                 }
                 break;
             case "Aasimar Scourge":
-                calculatedHeroicPastLivesBonuses.bonusFortitudeSave += 1;
+                calculatedPastLivesBonuses.bonusFortitudeSave += 1;
                 break;
             case "Bladeforged":
-                calculatedHeroicPastLivesBonuses.bonusFortification += 5;
+                calculatedPastLivesBonuses.bonusFortification += 5;
                 break;
             case "Deep Gnome":
-                calculatedHeroicPastLivesBonuses.bonusMrr += 3;
+                calculatedPastLivesBonuses.bonusMrr += 3;
                 break;
             case "Purple Dragon Knight":
-                calculatedHeroicPastLivesBonuses.bonusPrr += 3;
+                calculatedPastLivesBonuses.bonusPrr += 3;
                 break;
             case "Razorclaw Shifter":
-                calculatedHeroicPastLivesBonuses.bonusWillSave += 1;
+                calculatedPastLivesBonuses.bonusWillSave += 1;
                 break;
             case "Tiefling Scoundrel":
-                calculatedHeroicPastLivesBonuses.bonusReflexSave += 1;
+                calculatedPastLivesBonuses.bonusReflexSave += 1;
                 break;
             case "Shadar-Kai":
-                calculatedHeroicPastLivesBonuses.bonusDodge += 1;
+                calculatedPastLivesBonuses.bonusDodge += 1;
                 break;
             case "Morninglord":
-                calculatedHeroicPastLivesBonuses.bonusPositiveSpellPower += 3;
+                calculatedPastLivesBonuses.bonusPositiveSpellPower += 3;
                 break;
             case "Tabaxi Trailblazer":
-                calculatedHeroicPastLivesBonuses.bonusSavedTrap += 1;
+                calculatedPastLivesBonuses.bonusSavedTrap += 1;
                 break;
             case "Energy Criticals":
-                calculatedHeroicPastLivesBonuses.bonusElementAbsorption += 1;
+                epicReinc += 1;
+                calculatedPastLivesBonuses.bonusElementAbsorption += 1;
                 break;
             case "Enchant Weapon":
-                calculatedHeroicPastLivesBonuses.bonusElementAbsorption += 1;
+                epicReinc += 1;
+                calculatedPastLivesBonuses.bonusElementAbsorption += 1;
                 break;
             case "Arcane Alacrity":
-                calculatedHeroicPastLivesBonuses.bonusElementAbsorption += 1;
+                epicReinc += 1;
+                calculatedPastLivesBonuses.bonusElementAbsorption += 1;
                 break;
             case "Ancient Knowledge":
-                calculatedHeroicPastLivesBonuses.bonusElementAbsorption += 1;
+                epicReinc += 1;
+                calculatedPastLivesBonuses.bonusElementAbsorption += 1;
                 break;
             case "Eclipse Power":
-                calculatedHeroicPastLivesBonuses.bonusElementAbsorption += 1;
+                epicReinc += 1;
+                calculatedPastLivesBonuses.bonusElementAbsorption += 1;
                 break;
             case "Power Over Life and Death":
-                calculatedHeroicPastLivesBonuses.bonusPrr += 3;
+                epicReinc += 1;
+                calculatedPastLivesBonuses.bonusPrr += 3;
                 break;
             case "Brace":
-                calculatedHeroicPastLivesBonuses.bonusPrr += 3;
+                epicReinc += 1;
+                calculatedPastLivesBonuses.bonusPrr += 3;
                 break;
             case "Block Energy":
-                calculatedHeroicPastLivesBonuses.bonusPrr += 3;
+                epicReinc += 1;
+                calculatedPastLivesBonuses.bonusPrr += 3;
                 break;
             case "Ancient Blessing":
-                calculatedHeroicPastLivesBonuses.bonusPrr += 3;
+                epicReinc += 1;
+                calculatedPastLivesBonuses.bonusPrr += 3;
                 break;
             case "Doublestrike":
-                calculatedHeroicPastLivesBonuses.bonusAcFlat += 2;
-                calculatedHeroicPastLivesBonuses.bonusAcPerTen += 1;
+                epicReinc += 1;
+                calculatedPastLivesBonuses.bonusAcFlat += 2;
+                calculatedPastLivesBonuses.bonusAcPerTen += 1;
                 break;
             case "Skill Mastery":
-                calculatedHeroicPastLivesBonuses.bonusAcFlat += 2;
-                calculatedHeroicPastLivesBonuses.bonusAcPerTen += 1;
+                epicReinc += 1;
+                calculatedPastLivesBonuses.bonusAcFlat += 2;
+                calculatedPastLivesBonuses.bonusAcPerTen += 1;
                 break;
             case "Fortification":
-                calculatedHeroicPastLivesBonuses.bonusAcFlat += 2;
-                calculatedHeroicPastLivesBonuses.bonusAcPerTen += 1;
+                epicReinc += 1;
+                calculatedPastLivesBonuses.bonusAcFlat += 2;
+                calculatedPastLivesBonuses.bonusAcPerTen += 1;
                 break;
             case "Ancient Tactics":
-                calculatedHeroicPastLivesBonuses.bonusAcFlat += 2;
-                calculatedHeroicPastLivesBonuses.bonusAcPerTen += 1;
+                epicReinc += 1;
+                calculatedPastLivesBonuses.bonusAcFlat += 2;
+                calculatedPastLivesBonuses.bonusAcPerTen += 1;
                 break;
             case "Doubleshot":
-                calculatedHeroicPastLivesBonuses.bonusHitPoints += 3;
-                calculatedHeroicPastLivesBonuses.bonusHpEpicPerTen += 4;
+                epicReinc += 1;
+                calculatedPastLivesBonuses.bonusHitPoints += 3;
+                calculatedPastLivesBonuses.bonusHpEpicPerTen += 4;
                 break;
             case "Fast Healing":
-                calculatedHeroicPastLivesBonuses.bonusHitPoints += 3;
-                calculatedHeroicPastLivesBonuses.bonusHpEpicPerTen += 4;
+                epicReinc += 1;
+                calculatedPastLivesBonuses.bonusHitPoints += 3;
+                calculatedPastLivesBonuses.bonusHpEpicPerTen += 4;
                 break;
             case "Colors of the Queen":
-                calculatedHeroicPastLivesBonuses.bonusHitPoints += 3;
-                calculatedHeroicPastLivesBonuses.bonusHpEpicPerTen += 4;
+                epicReinc += 1;
+                calculatedPastLivesBonuses.bonusHitPoints += 3;
+                calculatedPastLivesBonuses.bonusHpEpicPerTen += 4;
                 break;
             case "Ancient Power":
-                calculatedHeroicPastLivesBonuses.bonusHitPoints += 3;
-                calculatedHeroicPastLivesBonuses.bonusHpEpicPerTen += 4;
+                epicReinc += 1;
+                calculatedPastLivesBonuses.bonusHitPoints += 3;
+                calculatedPastLivesBonuses.bonusHpEpicPerTen += 4;
                 break;
             default:
                 console.log("error: class not found in the switch for feats calculation" + reincarnatedClassesArray[i]);
         }
     };
+    // calculate EPIC COMPLETIONIST
+    // 12 any epic past lives
+    if (epicReinc >= 12) {
+        calculatedPastLivesBonuses.bonusDestinyPoint += 1;
+    }
+
+    // calculate HEROIC COMPLETIONIST
+    // one of each classes
+    const unique = (value, index, self) => {
+        return self.indexOf(value) === index
+    }
+    const heroicCompletionistArrayUnique = heroicCompletionistArray.filter(unique);
+    if (heroicCompletionistArrayUnique.length >= numberOfHeroicClassesInDDO) {
+        calculatedPastLivesBonuses.bonusStrength += 2;
+        calculatedPastLivesBonuses.bonusDexterity += 2;
+        calculatedPastLivesBonuses.bonusConstitution += 2;
+        calculatedPastLivesBonuses.bonusIntelligence += 2;
+        calculatedPastLivesBonuses.bonusWisdom += 2;
+        calculatedPastLivesBonuses.bonusCharisma += 2;
+        calculatedPastLivesBonuses.bonusAllSkills += 2;
+    }
+
+    // calculate RACIAL COMPLETIONIST
+    // three of each races
+    if (racialCompletionistArray.length >= numberOfRacesInDDO * 3) {
+        calculatedPastLivesBonuses.bonusStrength += 2;
+        calculatedPastLivesBonuses.bonusDexterity += 2;
+        calculatedPastLivesBonuses.bonusConstitution += 2;
+        calculatedPastLivesBonuses.bonusIntelligence += 2;
+        calculatedPastLivesBonuses.bonusWisdom += 2;
+        calculatedPastLivesBonuses.bonusCharisma += 2;
+        calculatedPastLivesBonuses.bonusAllSkills += 2;
+    }
 }
 
 function generateSelectBoxes(minIndex, maxIndex, idOfColumn) {
@@ -851,10 +946,10 @@ function printFeatsCalculation() {
     let listOfCalculatedPassiveFeats = document.getElementById("passiveFeatsCalculation");
     listOfCalculatedPassiveFeats.innerHTML = '';
 
-    for (const property in calculatedHeroicPastLivesBonuses) {
-        if (calculatedHeroicPastLivesBonuses[property] != 0) {
+    for (const property in calculatedPastLivesBonuses) {
+        if (calculatedPastLivesBonuses[property] != 0) {
             let itemOfCalculatedPassiveFeats = document.createElement("li");
-            itemOfCalculatedPassiveFeats.appendChild(document.createTextNode(textForPastLivePassiveBonus(property) + calculatedHeroicPastLivesBonuses[property]));
+            itemOfCalculatedPassiveFeats.appendChild(document.createTextNode(textForPastLivePassiveBonus(property) + calculatedPastLivesBonuses[property]));
             listOfCalculatedPassiveFeats.appendChild(itemOfCalculatedPassiveFeats);
         }
     }
