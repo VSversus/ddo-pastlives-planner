@@ -753,8 +753,28 @@
         </div>
         <!--end of calculation row-->
 
+        <div>
+
+        </div>
+
         <div class="row brownBorder">
-            <h4>Plan your Reincarnations</h4>
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <h4>Plan your Reincarnations</h4>
+                </div>
+                <div class="col-sm-4 d-flex position-relative">
+                    <div  class="position-absolute top-0 end-0">
+                        <button type="button" class="btn btn-default" onclick="exportList()">
+                            <img class="importExportImg" src="assets\icons8-save-30.png"/>
+                        </button>
+                        <button type="button" class="btn btn-default" onclick="importList()">
+                            <img class= "importExportImg" src="assets\icons8-opened-folder-48.png"/>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
             <div class="col-sm-3">
                 <form>
                     <div class="form-group row" id="columnFormOne">
@@ -799,6 +819,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script src="index.js"></script>
+    <script src="importExport.js"></script>
 
 </body>
 

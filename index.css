@@ -28,6 +28,12 @@ h2, h3, h4, h5, h6 {
     border-width: 2px;
 }
 
+.importExportImg {
+    width: 30px;
+    min-width: 30px;
+    opacity: 0.6;
+}
+
 .iconHeader {
     font-weight: bold;
     margin-top: 4px;
