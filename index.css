@@ -22,6 +22,12 @@ h2, h3, h4, h5, h6 {
     min-width: 54px;
 }
 
+.archetypeImg {
+    border-style: solid;
+    border-color:crimson;
+    border-width: 2px;
+}
+
 .iconHeader {
     font-weight: bold;
     margin-top: 4px;

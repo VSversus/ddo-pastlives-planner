@@ -798,10 +798,9 @@ function calculateReincarnations() {
         }
     };
     // calculate EPIC COMPLETIONIST
-    // 12 any epic past lives
-    if (epicReinc >= 12) {
-        calculatedPastLivesBonuses.bonusDestinyPoint += 1;
-    }
+    // for every 12 of any epic past lives
+    let bonusDestinyPoint = Math.floor(epicReinc/12)
+    calculatedPastLivesBonuses.bonusDestinyPoint += bonusDestinyPoint;
 
     // calculate HEROIC COMPLETIONIST
     // one of each classes
@@ -836,9 +835,9 @@ function generateSelectBoxes(minIndex, maxIndex, idOfColumn) {
     for (let index = minIndex; index <= maxIndex; index++) {
         // <label class="col-sm-6 col-form-label" for="reincarnation001">1st reincarnation</label>
         var label = document.createElement('label');
-        label.textContent = "reincarnation " + index;
+        label.textContent = "Past Life Feat " + index;
         label.className = "col-sm-5 col-form-label";
-        label.htmlFor = "reincarnation" + index;
+        label.htmlFor = "pastLive" + index;
         document.getElementById(idOfColumn).appendChild(label);
 
         /*
