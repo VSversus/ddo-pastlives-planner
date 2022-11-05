@@ -740,14 +740,12 @@
                 <p></p>
             </div>
             <div class="row">
-                <div class="col-sm-5">
-            </div>
-                <div class="col-sm-4" id="passiveFeatsCalculation">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-6" id="passiveFeatsCalculation">
                     <ul>
-
                     </ul>
                 </div>
-                <div class="col">
+                <div class="col-sm-2">
                 </div>
             </div>
         </div>
@@ -763,17 +761,19 @@
                 <div class="col-sm-4">
                     <h4>Plan your Reincarnations</h4>
                 </div>
+                <!-- import export buttons -->
                 <div class="col-sm-4 d-flex position-relative">
                     <div  class="position-absolute top-0 end-0">
-                        <button type="button" class="btn btn-default" onclick="exportList()">
+                        <label class="btn btn-default" onclick="exportList()">
                             <img class="importExportImg" src="assets\icons8-save-30.png"/>
-                        </button>
-                        <button type="button" class="btn btn-default" onclick="importList()">
+                        </label>
+                        <label class="btn btn-default" for="file-selector">
                             <img class= "importExportImg" src="assets\icons8-opened-folder-48.png"/>
-                        </button>
+                            <input type="file" id="file-selector" accept=".csv" style="display: none;">
+                        </label>
                     </div>
-
                 </div>
+                <!-- end of import export buttons -->
             </div>
             <div class="col-sm-3">
                 <form>
@@ -810,6 +810,7 @@
     <!--end of the container-->
 
     <footer class="page-footer font-small pt-4 text-center">
+        <hr>
         <p>
             2021 Made by Mordhaak of Argonnessen
         </p>

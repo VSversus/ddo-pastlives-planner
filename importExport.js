@@ -5,7 +5,6 @@ function exportList() {
     let selectionsArray = document.getElementsByClassName('reincarnationSelect')
     for (let i = 0; i < selectionsArray.length; i++) {
         let nameOfClass = selectionsArray[i].selectedOptions[0].label;
-        //console.log(i+1 + ' ' + nameOfClass)
         csvContent += i+1 + ';' + nameOfClass + "\r\n";
     };
     var encodedUri = encodeURI(csvContent);
@@ -13,6 +12,9 @@ function exportList() {
 }
 
 function importList() {
-    document.getElementById('reincarnation1').value = "Dwarf";
+    for (let index = 0; index < array.length; index++) {
+        //const element = array[index];
+        document.getElementById('reincarnation' + i).value = nameOfClass;
+    }
     changeSelectColorForDefaultValue();
 }

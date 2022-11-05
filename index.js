@@ -135,178 +135,178 @@ function textForPastLivePassiveBonus(pastLivePassiveBonus) {
     let text;
     switch (pastLivePassiveBonus) {
         case "bonusDcTrasmutation":
-            text = "bonus to DC's of your Transmutation spells: +";
+            text = "bonus to DC's of your Transmutation spells";
             break;
         case "maximumSpellPoint":
-            text = "bonus to maximum spell points (SP): +"
+            text = "bonus to maximum spell points (SP)"
             break;
         case "bonusIntelligenceSkills":
-            text = "bonus to all intelligence based skills: +"
+            text = "bonus to all intelligence based skills"
             break;
         case "bonusUmd":
-            text = "bonus to Use Magic Device Skill: +"
+            text = "bonus to Use Magic Device Skill"
             break;
         case "bonusHitPoints":
-            text = "bonus to total hit points (HP): +"
+            text = "bonus to total hit points (HP)"
             break;
         case "bonusSavesEnchIll":
-            text = "bonus to saves vs. enchantments and illusions: +"
+            text = "bonus to saves vs. enchantments and illusions"
             break;
         case "bonusBardSongUsage":
-            text = "bard song usage: +"
+            text = "bard song usage"
             break;
         case "bonusDcConjuration":
-            text = "bonus to DC's of your Conjuration spells: +"
+            text = "bonus to DC's of your Conjuration spells"
             break;
         case "turnUndeadAttempt":
-            text = "Turn Undead attempt: +"
+            text = "Turn Undead attempt"
             break;
         case "turnUndeadHigher":
-            text = "you Turn Undead as if you were for that many levels higher: "
+            text = "you Turn Undead as if you were for that many levels higher"
             break;
         case "bonusSummon":
-            text = "your summoned creatures, charmed minions, and hirelings gain to all ability scores bonus: +"
+            text = "your summoned creatures, charmed minions, and hirelings gain to all ability scores bonus"
             break;
         case "bonusSpellPen":
-            text = "bonus to spell penetration: +"
+            text = "bonus to spell penetration"
             break;
         case "bonusAttackRoll":
-            text = "bonus to attack rolls: +"
+            text = "bonus to attack rolls"
             break;
         case "bonusDcTactical":
-            text = "bonus to DC's of your tactical feats: +"
+            text = "bonus to DC's of your tactical feats"
             break;
         case "bonusDamageRolls":
-            text = "bonus to damage rolls: +"
+            text = "bonus to damage rolls"
             break;
         case "bonusPositiveHealAmp":
-            text = "bonus to positive healing amplification: +"
+            text = "bonus to positive healing amplification"
             break;
         case "bonusDmgRanged":
-            text = "bonus to damage with ranged weapons (not thrown): +"
+            text = "bonus to damage with ranged weapons (not thrown)"
             break;
         case "elementResistance":
-            text = "bonus to elemental resistances: +"
+            text = "bonus to elemental resistances"
             break;
         case "bonusSavedTrap":
-            text = "bonus to saves vs. traps: +"
+            text = "bonus to saves vs. traps"
             break;
         case "bonusDmgSneak":
-            text = "bonus to damage when sneaking: +"
+            text = "bonus to damage when sneaking"
             break;
         case "bonusDcEvocation":
-            text = "bonus to DC's of your Evocations spells: +"
+            text = "bonus to DC's of your Evocations spells"
             break;
         case "bonusMrr":
-            text = "bonus to magical resistance rating (MRR): +"
+            text = "bonus to magical resistance rating (MRR)"
             break;
         case "bonusDcWands":
-            text = "bonus to DC's of your wands: +"
+            text = "bonus to DC's of your wands"
             break;
         case "bonusHaggle":
-            text = "bonus to Haggle: +"
+            text = "bonus to Haggle"
             break;
         case "bonusBalance":
-            text = "bonus to Balance: +"
+            text = "bonus to Balance"
             break;
         case "bonusMoveSilently":
-            text = "bonus to Move Silently: +"
+            text = "bonus to Move Silently"
             break;
         case "bonusSpot":
-            text = "bonus to Spot: +"
+            text = "bonus to Spot"
             break;
         case "bonusSpellcraft":
-            text = "bonus to Spellcraft: +"
+            text = "bonus to Spellcraft"
             break;
         case "bonusHeal":
-            text = "bonus to Heal: +"
+            text = "bonus to Heal"
             break;
         case "bonusSearch":
-            text = "bonus to Search: +"
+            text = "bonus to Search"
             break;
         case "bonusDiplomacy":
-            text = "bonus to Diplomacy: +"
+            text = "bonus to Diplomacy"
             break;
         case "bonusIntimidate":
-            text = "bonus to Intimidate: +"
+            text = "bonus to Intimidate"
             break;
         case "bonusTumble":
-            text = "bonus to Tumble: +"
+            text = "bonus to Tumble"
             break;
         case "bonusCharisma":
-            text = "bonus to Charisma: +"
+            text = "bonus to Charisma"
             break;
         case "bonusIntelligence":
-            text = "bonus to Intelligence: +"
+            text = "bonus to Intelligence"
             break;
         case "bonusWisdom":
-            text = "bonus to Wisdom: +"
+            text = "bonus to Wisdom"
             break;
         case "bonusConstitution":
-            text = "bonus to Constitution: +"
+            text = "bonus to Constitution"
             break;
         case "bonusDexterity":
-            text = "bonus to Dexterity: +"
+            text = "bonus to Dexterity"
             break;
         case "bonusStrength":
-            text = "bonus to Strength: +"
+            text = "bonus to Strength"
             break;
         case "bonusRacialActionPoint":
-            text = "bonus points to Racial Enhancement Tree: +"
+            text = "bonus points to Racial Enhancement Tree"
             break;
         case "bonusFortitudeSave":
-            text = "bonus to fortitude save: +"
+            text = "bonus to fortitude save"
             break;
         case "bonusFortification":
-            text = "percentage bonus to fortification: +"
+            text = "percentage bonus to fortification"
             break;
         case "bonusPrr":
-            text = "bonus to physical resistance rating (PRR): +"
+            text = "bonus to physical resistance rating (PRR)"
             break;
         case "bonusWillSave":
-            text = "bonus to will save: +"
+            text = "bonus to will save"
             break;
         case "bonusReflexSave":
-            text = "bonus points to reflex save: +"
+            text = "bonus points to reflex save"
             break;
         case "bonusDodge":
-            text = "percentage bonus to dodge: +"
+            text = "percentage bonus to dodge"
             break;
         case "bonusPositiveSpellPower":
-            text = "bonus to positive spell power: +"
+            text = "bonus to positive spell power"
             break;
         case "bonusElementAbsorption":
-            text = "percentage bonus to Absorption of Acid, Cold, Electric, and Fire damage: +"
+            text = "percentage bonus to Absorption of Acid, Cold, Electric, and Fire damage"
             break;
         case "bonusAcFlat":
-            text = "bonus to AC: +"
+            text = "bonus to AC"
             break;
         case "bonusAcPerTen":
-            text = "bonus to AC per 10 character levels: +"
+            text = "bonus to AC per 10 character levels"
             break;
         case "bonusHpEpicPerTen":
-            text = "bonus to HP per 10 character levels: +"
+            text = "bonus to HP per 10 character levels"
             break;
         case "bonusRepair":
-            text = "bonus to Repair: +"
+            text = "bonus to Repair"
             break;
         case "bonusNegativeHealAmp":
-            text = "bonus to negative healing amplification: +"
+            text = "bonus to negative healing amplification"
             break;
         case "bonusNegativeSpellPower":
-            text = "bonus to negative spell power: +"
+            text = "bonus to negative spell power"
             break;
         case "bonusLightningSpellPower":
-            text = "bonus to lightning spell power: +"
+            text = "bonus to lightning spell power"
             break;
         case "bonusSonicSpellPower":
-            text = "bonus to sonic spell power: +"
+            text = "bonus to sonic spell power"
             break;
         case "bonusDestinyPoint":
-            text = 'bonus destiny points: +'
+            text = 'bonus destiny points'
             break;
         case "bonusAllSkills":
-            text = 'bonus to all skills: +'
+            text = 'bonus to all skills'
             break;
         default:
             text = "error (text for feat not found) "
@@ -942,13 +942,21 @@ function saveReincarnatedClasses() {
 
 // print calculations for feats of all chosen reincarnations
 function printFeatsCalculation() {
-    let listOfCalculatedPassiveFeats = document.getElementById("passiveFeatsCalculation");
+    let listOfCalculatedPassiveFeats = document.getElementById('passiveFeatsCalculation');
     listOfCalculatedPassiveFeats.innerHTML = '';
 
     for (const property in calculatedPastLivesBonuses) {
         if (calculatedPastLivesBonuses[property] != 0) {
-            let itemOfCalculatedPassiveFeats = document.createElement("li");
-            itemOfCalculatedPassiveFeats.appendChild(document.createTextNode(textForPastLivePassiveBonus(property) + calculatedPastLivesBonuses[property]));
+            const itemOfCalculatedPassiveFeats = document.createElement("li");
+
+            const boldNumber = document.createElement("strong");
+            const textNode = document.createTextNode(calculatedPastLivesBonuses[property]);
+            boldNumber.appendChild(textNode)
+
+            itemOfCalculatedPassiveFeats.appendChild(document.createTextNode('+ '));
+            itemOfCalculatedPassiveFeats.appendChild(boldNumber)
+            itemOfCalculatedPassiveFeats.appendChild(document.createTextNode(' ' + textForPastLivePassiveBonus(property)));
+
             listOfCalculatedPassiveFeats.appendChild(itemOfCalculatedPassiveFeats);
         }
     }

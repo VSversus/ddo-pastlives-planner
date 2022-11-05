@@ -54,11 +54,7 @@ figcaption {
     text-align: center;
 }
 
-#defineReincarnations {
-    text-align: center;
-}
-
-#defineReincarnations > ul > li {
+li {
     list-style-type: none;
 }
 
@@ -68,7 +64,7 @@ figcaption {
 
 .brownBorder {
     border-style: solid;
-    border-width: 1px;
+    border-width: 0px;
     border-color: brown;
     margin-bottom: -1px;
     font-size: 80%;
