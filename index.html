@@ -758,29 +758,54 @@
         <div class="row brownBorder">
             <div class="row">
                 <div class="col-sm-2">
-
                 </div>
                 <div class="col-sm-8">
                     <h4>Plan your Reincarnations</h4>
                 </div>
-                <!-- import export buttons -->
-                <div class="col-sm-2 d-flex position-relative">
-                    <div class="position-absolute top-50 end-0">
-                        <label class="btn btn-default" onclick="exportList()">
-                            <img class="importExportImg" src="assets\icons8-save-30.png" alt="Save Icon" title="Save your plan as .csv file"/>
-                        </label>
-                        <label class="btn btn-default" for="fileSelector">
-                            <img class= "importExportImg" src="assets\icons8-opened-folder-48.png" alt="Load Icon" title="Import your plan saved in .csv file"/>
-                            <input type="file" id="fileSelector" accept=".csv">
-                        </label>
-                    </div>
+                <div class="col-sm-2">
                 </div>
-                <!-- end of import export buttons -->
             </div>
-            <div class="row">
 
+            <!-- import export buttons -->
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-12 d-flex flex-row justify-content-end">
+                    <button type="button" class="btn btn-outline-dark" onclick="setEmpty()">
+                        <img class="importExportImg greyscale" src="assets\icons8-empty-67.png" alt="Save Icon" title="Set heroic completionist"/>
+                    </button>
+                    <button type="button" class="btn btn-outline-warning" onclick="setHeroicCompletionist()">
+                        <img class="importExportImg greyscale" src="assets\Icon_Feat_Past_Life_Completionist.png" alt="Save Icon" title="Set heroic completionist"/>
+                    </button>
+                    <button type="button" class="btn btn-outline-primary" onclick="setRacialCompletionist()">
+                        <img class="importExportImg greyscale" src="assets\Icon_Feat_Past_Life_Completionist.png" alt="Save Icon" title="Set racial completionist"/>
+                    </button>
+                    <button type="button" class="btn btn-outline-success" onclick="setTotalCompletionist()">
+                        <img class="importExportImg greyscale" src="assets\Icon_Feat_Past_Life_Completionist.png" alt="Save Icon" title="Set all the past life feats"/>
+                    </button>
+                    <label class="btn btn-outline-dark" onclick="exportList()">
+                        <img class="importExportImg" src="assets\icons8-save-30.png" alt="Save Icon" title="Save your plan as .csv file"/>
+                    </label>
+                    <label class="btn btn-outline-dark" for="fileSelector">
+                        <img class= "importExportImg" src="assets\icons8-opened-folder-48.png" alt="Load Icon" title="Import your plan saved in .csv file"/>
+                        <input type="file" id="fileSelector" accept=".csv">
+                    </label>
+                </div>
+            </div>
+            <!-- end of import export buttons -->
+
+            <div class="row">
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4"></div>
             </div>
             <div class="row">
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4"></div>
+            </div>
+            <div class="row rowMarginTop">
                 <div class="col-sm-3">
                     <form>
                         <div class="form-group row" id="columnFormOne">
@@ -829,6 +854,10 @@
     <script src="index.js"></script>
     <script src="importExport.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="data\heroicCompletionist.js"></script>
+    <script src="data\racialCompletionist.js"></script>
+    <script src="data\totalCompletionist.js"></script>
+    <script src="data\empty.js"></script>
 
 </body>
 

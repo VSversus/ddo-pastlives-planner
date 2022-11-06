@@ -30,6 +30,7 @@ function createEventListenerForImport() {
 }
 
 function importList(importArray) {
+    console.log(importArray);
     for (let i = 0; i < importArray.length; i++) {
         if (importArray[i].Name != '-') {
             document.getElementById('reincarnation' + importArray[i].Number).value = importArray[i].Name;
@@ -42,6 +43,22 @@ function importList(importArray) {
     printFeatsCalculation();
     checkMaximumNumberOfReincarnationsForOneClass();
     changeSelectColorForDefaultValue();
+}
+
+function setEmpty() {
+    importList(emptyArray);
+}
+
+function setHeroicCompletionist() {
+    importList(heroicCompletionistArray);
+}
+
+function setRacialCompletionist() {
+    importList(racialCompletionistArray);
+}
+
+function setTotalCompletionist() {
+    importList(totalCompletionistArray);
 }
 
 createEventListenerForImport();

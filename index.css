@@ -30,8 +30,6 @@ h2, h3, h4, h5, h6 {
 
 .importExportImg {
     width: 30px;
-    min-width: 30px;
-    opacity: 0.6;
 }
 
 .iconHeader {
@@ -88,4 +86,21 @@ footer {
     font-weight: bold;
     display: inline-block;
     width: 25px;
- }
+}
+
+.rowMarginTop {
+    margin-top: 30px;
+}
+
+.racialCompletionistImg {
+    filter:  hue-rotate(180deg);
+}
+
+.greyscale {
+    filter: grayscale(100%);
+}
+
+.btn {
+    margin: 5px;
+    opacity: 0.6;
+}

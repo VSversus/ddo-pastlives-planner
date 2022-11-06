@@ -3,7 +3,7 @@
 let calculatedPastLivesBonuses;
 let reincarnationOptions = [];
 let numberOfReincarnations = 1;
-let maxNumberOfReincarnations = 165;
+let maxNumberOfReincarnations = 174;
 let reincarnatedClassesArray = [];
 const numberOfHeroicClassesInDDO = 15;
 const numberOfRacesInDDO = 14;
@@ -923,6 +923,8 @@ function addOptionsForNumberOfReincarnationsSelect() {
     for (let i = 1; i <= maxNumberOfReincarnations; i++) {
         numberOfReincarnationsSelect.options[numberOfReincarnationsSelect.options.length] = new Option(i, i);
     };
+    numberOfReincarnationsSelect.value = maxNumberOfReincarnations;
+    numberOfReincarnations = maxNumberOfReincarnations;
 }
 
 // save the number of reincarnations chosen by the user for passive feats calculation
