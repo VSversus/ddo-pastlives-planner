@@ -31,7 +31,7 @@ h2, h3, h4, h5, h6 {
 .importExportImg {
     width: 30px;
     min-width: 30px;
-    opacity: 0;
+    opacity: 0.6;
 }
 
 .iconHeader {
@@ -74,7 +74,11 @@ li {
 
 select option {
     background-color: white;
-  }
+}
+
+#fileSelector {
+    display: none;
+}
 
 footer {
     color: brown;
