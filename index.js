@@ -947,16 +947,16 @@ function printFeatsCalculation() {
 
     for (const property in calculatedPastLivesBonuses) {
         if (calculatedPastLivesBonuses[property] != 0) {
-            const itemOfCalculatedPassiveFeats = document.createElement("li");
+            const itemOfCalculatedPassiveFeats = document.createElement('li');
 
-            const boldNumber = document.createElement("strong");
+            const boldNumber = document.createElement('span');
+            boldNumber.setAttribute('id', 'boldNumber');
             const textNode = document.createTextNode(calculatedPastLivesBonuses[property]);
             boldNumber.appendChild(textNode)
 
             itemOfCalculatedPassiveFeats.appendChild(document.createTextNode('+ '));
-            itemOfCalculatedPassiveFeats.appendChild(boldNumber)
+            itemOfCalculatedPassiveFeats.appendChild(boldNumber);
             itemOfCalculatedPassiveFeats.appendChild(document.createTextNode(' ' + textForPastLivePassiveBonus(property)));
-
             listOfCalculatedPassiveFeats.appendChild(itemOfCalculatedPassiveFeats);
         }
     }

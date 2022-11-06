@@ -19,7 +19,6 @@ function createEventListenerForImport() {
         const reader = new FileReader();
 
         reader.addEventListener("load", () => {
-            // this will then display a text file
             const importArray = d3.csvParse(reader.result);
             importList(importArray);
         }, false);
@@ -35,7 +34,7 @@ function importList(importArray) {
         if (importArray[i].Name != '-') {
             document.getElementById('reincarnation' + importArray[i].Number).value = importArray[i].Name;
         } else {
-            continue
+            document.getElementById('reincarnation' + importArray[i].Number).value = 'defaultClassOption';
         }
     }
     saveReincarnatedClasses();

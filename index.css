@@ -6,7 +6,7 @@ body {
 
 h2, h3, h4, h5, h6 {
     text-align: center;
-    padding: 40px;
+    padding: 50px;
     color: brown;
 }
 
@@ -83,3 +83,9 @@ select option {
 footer {
     color: brown;
 }
+
+#boldNumber {
+    font-weight: bold;
+    display: inline-block;
+    width: 25px;
+ }
