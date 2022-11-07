@@ -797,6 +797,7 @@ function calculateReincarnations() {
                 console.log("error: class not found in the switch for feats calculation" + reincarnatedClassesArray[i]);
         }
     };
+
     // calculate EPIC COMPLETIONIST
     // for every 12 of any epic past lives
     let bonusDestinyPoint = Math.floor(epicReinc/12)
@@ -831,6 +832,7 @@ function calculateReincarnations() {
     }
 }
 
+// generate select boxes when the page load
 function generateSelectBoxes(minIndex, maxIndex, idOfColumn) {
     for (let index = minIndex; index <= maxIndex; index++) {
         // <label class="col-sm-6 col-form-label" for="reincarnation001">1st reincarnation</label>
@@ -873,7 +875,7 @@ function generateSelectBoxes(minIndex, maxIndex, idOfColumn) {
     }
 }
 
-//
+// add past lifes to all generated select boxes
 function createReincarnationOptions() {
     // iterate over all selects
     reincarnationOptions.forEach(function (reincarnationOptionId) {
@@ -918,6 +920,7 @@ function saveReincarnationOptionsIds() {
     };
 }
 
+// add numbers in dropdown "Number of Past Life Feats"
 function addOptionsForNumberOfReincarnationsSelect() {
     let numberOfReincarnationsSelect = document.getElementById('numberOfReincarnationsSelect');
     for (let i = 1; i <= maxNumberOfReincarnations; i++) {
@@ -966,7 +969,6 @@ function printFeatsCalculation() {
 
 function checkMaximumNumberOfReincarnationsForOneClass() {
     let counts = {}
-
     for (let i = 0; i < reincarnatedClassesArray.length; i++) {
         if (counts[reincarnatedClassesArray[i]]) {
             counts[reincarnatedClassesArray[i]] += 1
@@ -975,6 +977,7 @@ function checkMaximumNumberOfReincarnationsForOneClass() {
         }
     }
     for (let prop in counts) {
+        // disable all options that should be disabled
         if (counts[prop] >= 3 && prop != '-') {
             // iterate over all selects
             for (let s = 0; s < reincarnationOptions.length; s++) {
@@ -985,6 +988,7 @@ function checkMaximumNumberOfReincarnationsForOneClass() {
                     }
                 }
             }
+        // enable all options that should be enabled
         } else {
             // iterate over all selects
             for (let s = 0; s < reincarnationOptions.length; s++) {
@@ -995,6 +999,7 @@ function checkMaximumNumberOfReincarnationsForOneClass() {
                     }
                 }
             }
+
         }
     }
 }
@@ -1011,6 +1016,15 @@ function changeSelectColorForDefaultValue() {
     };
 }
 
+function enableAllOptions() {
+    for (let s = 0; s < reincarnationOptions.length; s++) {
+        // iterate over options of given select
+        for (let o = 0; o < document.getElementById(reincarnationOptions[s]).options.length; o++) {
+            document.getElementById(reincarnationOptions[s]).options[o].disabled = false;
+        }
+    }
+}
+
 generateSelectBoxes(1, 44, "columnFormOne");
 generateSelectBoxes(45, 88, "columnFormTwo");
 generateSelectBoxes(89, 132, "columnFormThree");
@@ -1021,4 +1035,3 @@ createEventListenerForNumberofReincarnationsSelect();
 createEventListenerForReincarnationOptions();
 changeSelectColorForDefaultValue();
 createReincarnationOptions();
-
