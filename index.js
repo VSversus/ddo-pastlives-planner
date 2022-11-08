@@ -616,7 +616,6 @@ function generateSelectBoxes(minIndex, maxIndex, idOfColumn) {
         // select
         var select = document.createElement('select');
         select.className = 'form-select form-select-sm reincarnationSelect';
-        select.ariaLabel = '.form-select-sm example';
         select.id = 'reincarnation' + index;
         select.name = 'reincarnation' + index;
 

@@ -72,6 +72,10 @@ select option {
     background-color: white;
 }
 
+.form-select-sm {
+    font-size: 100%;
+}
+
 #fileSelector {
     display: none;
 }
