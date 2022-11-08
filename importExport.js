@@ -40,6 +40,7 @@ function importList(importArray) {
     saveReincarnatedClasses();
     calculateReincarnations();
     printFeatsCalculation();
+    checkMaximumNumberOfReincarnationsForOneClass();
     changeSelectColorForDefaultValue();
 }
 
