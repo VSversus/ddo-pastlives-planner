@@ -40,13 +40,11 @@ function importList(importArray) {
     saveReincarnatedClasses();
     calculateReincarnations();
     printFeatsCalculation();
-    //checkMaximumNumberOfReincarnationsForOneClass();
     changeSelectColorForDefaultValue();
 }
 
 function setEmpty() {
     importList(emptyArray);
-    enableAllOptions(); // this is workaround for a problem that I was not able to solve (disabled options kept disabled after reseting of all past lifes)
 }
 
 function setHeroicCompletionist() {
