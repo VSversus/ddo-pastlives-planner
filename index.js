@@ -755,7 +755,6 @@ function checkMaximumNumberOfReincarnationsForOneClass() {
                     }
                 }
             }
-
         }
     }
 }
@@ -770,6 +769,14 @@ function changeSelectColorForDefaultValue() {
             selectionsArray[i].style.backgroundColor = 'white';
         }
     };
+}
+
+function enableAllOptions() {
+    for (let s = 0; s < reincarnationOptions.length; s++) {
+        for (let o = 0; o < document.getElementById(reincarnationOptions[s]).options.length; o++) {
+            document.getElementById(reincarnationOptions[s]).options[o].disabled = false;
+        }
+    }
 }
 
 generateSelectBoxes(1, 44, 'columnFormOne');

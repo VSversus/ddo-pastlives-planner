@@ -45,6 +45,7 @@ function importList(importArray) {
 
 function setEmpty() {
     importList(emptyArray);
+    enableAllOptions();
 }
 
 function setHeroicCompletionist() {
