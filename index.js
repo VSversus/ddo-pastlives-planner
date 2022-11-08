@@ -2,9 +2,9 @@
 
 let calculatedPastLivesBonuses;
 let reincarnationOptions = [];
-let numberOfReincarnations = 1;
-let maxNumberOfReincarnations = 174;
+let numberOfReincarnations = 0;
 let reincarnatedClassesArray = [];
+const maxNumberOfReincarnations = 174;
 const numberOfHeroicClassesInDDO = 15;
 const numberOfRacesInDDO = 14;
 
