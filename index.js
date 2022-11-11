@@ -716,7 +716,7 @@ function printFeatsCalculation() {
 
             itemOfCalculatedPassiveFeats.appendChild(document.createTextNode('+ '));
             itemOfCalculatedPassiveFeats.appendChild(boldNumber);
-            itemOfCalculatedPassiveFeats.appendChild(document.createTextNode(' ' + textForPastLivePassiveBonus(property)));
+            itemOfCalculatedPassiveFeats.appendChild(document.createTextNode(' ' + textForPastLivePassiveBonus[property]));
             listOfCalculatedPassiveFeats.appendChild(itemOfCalculatedPassiveFeats);
         }
     }
