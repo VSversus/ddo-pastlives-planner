@@ -45,20 +45,39 @@ function importList(importArray) {
 }
 
 function setEmpty() {
+    let emptyArray = makeArrayFromObject(empty);
     importList(emptyArray);
     enableAllOptions();
 }
 
 function setHeroicCompletionist() {
+    let heroicCompletionistArray = makeArrayFromObject(heroicCompletionist);
     importList(heroicCompletionistArray);
 }
 
 function setRacialCompletionist() {
+    let racialCompletionistArray = makeArrayFromObject(racialCompletionist);
     importList(racialCompletionistArray);
 }
 
 function setTotalCompletionist() {
+    let totalCompletionistArray = makeArrayFromObject(totalCompletionist);
     importList(totalCompletionistArray);
+}
+
+function makeArrayFromObject(object) {
+    let array = [];
+    let count = Object.keys(object).length;
+    let objectKeys = Object.keys(object);
+    let objectValues = Object.values(object);
+
+    for (let index = 0; index < count; index++) {
+        let element = {};
+        element.Number = objectKeys[index]
+        element.Name = objectValues[index]
+        array.push(element);
+    }
+    return array
 }
 
 createEventListenerForImport();

@@ -1,698 +1,176 @@
-let totalCompletionistArray = [
-    {
-        Number: '1',
-        Name: 'Human'
-    },
-    {
-        Number: '2',
-        Name: 'Human'
-    },
-    {
-        Number: '3',
-        Name: 'Human'
-    },
-    {
-        Number: '4',
-        Name: 'Dwarf'
-    },
-    {
-        Number: '5',
-        Name: 'Dwarf'
-    },
-    {
-        Number: '6',
-        Name: 'Dwarf'
-    },
-    {
-        Number: '7',
-        Name: 'Aasimar'
-    },
-    {
-        Number: '8',
-        Name: 'Aasimar'
-    },
-    {
-        Number: '9',
-        Name: 'Aasimar'
-    },
-    {
-        Number: '10',
-        Name: 'Dragonborn'
-    },
-    {
-        Number: '11',
-        Name: 'Dragonborn'
-    },
-    {
-        Number: '12',
-        Name: 'Dragonborn'
-    },
-    {
-        Number: '13',
-        Name: 'Drow'
-    },
-    {
-        Number: '14',
-        Name: 'Drow'
-    },
-    {
-        Number: '15',
-        Name: 'Drow'
-    },
-    {
-        Number: '16',
-        Name: 'Elf'
-    },
-    {
-        Number: '17',
-        Name: 'Elf'
-    },
-    {
-        Number: '18',
-        Name: 'Elf'
-    },
-    {
-        Number: '19',
-        Name: 'Gnome'
-    },
-    {
-        Number: '20',
-        Name: 'Gnome'
-    },
-    {
-        Number: '21',
-        Name: 'Gnome'
-    },
-    {
-        Number: '22',
-        Name: 'Half-Elf'
-    },
-    {
-        Number: '23',
-        Name: 'Half-Elf'
-    },
-    {
-        Number: '24',
-        Name: 'Half-Elf'
-    },
-    {
-        Number: '25',
-        Name: 'Half-Orc'
-    },
-    {
-        Number: '26',
-        Name: 'Half-Orc'
-    },
-    {
-        Number: '27',
-        Name: 'Half-Orc'
-    },
-    {
-        Number: '28',
-        Name: 'Shifter'
-    },
-    {
-        Number: '29',
-        Name: 'Shifter'
-    },
-    {
-        Number: '30',
-        Name: 'Shifter'
-    },
-    {
-        Number: '31',
-        Name: 'Warforged'
-    },
-    {
-        Number: '32',
-        Name: 'Warforged'
-    },
-    {
-        Number: '33',
-        Name: 'Warforged'
-    },
-    {
-        Number: '34',
-        Name: 'Tiefling'
-    },
-    {
-        Number: '35',
-        Name: 'Tiefling'
-    },
-    {
-        Number: '36',
-        Name: 'Tiefling'
-    },
-    {
-        Number: '37',
-        Name: 'Halfling'
-    },
-    {
-        Number: '38',
-        Name: 'Halfling'
-    },
-    {
-        Number: '39',
-        Name: 'Halfling'
-    },
-    {
-        Number: '40',
-        Name: 'Tabaxi'
-    },
-    {
-        Number: '41',
-        Name: 'Tabaxi'
-    },
-    {
-        Number: '42',
-        Name: 'Tabaxi'
-    },
-    {
-        Number: '43',
-        Name: 'Alchemist'
-    },
-    {
-        Number: '44',
-        Name: 'Alchemist'
-    },
-    {
-        Number: '45',
-        Name: 'Alchemist'
-    },
-    {
-        Number: '46',
-        Name: 'Artificer'
-    },
-    {
-        Number: '47',
-        Name: 'Artificer'
-    },
-    {
-        Number: '48',
-        Name: 'Artificer'
-    },
-    {
-        Number: '49',
-        Name: 'Barbarian'
-    },
-    {
-        Number: '50',
-        Name: 'Barbarian'
-    },
-    {
-        Number: '51',
-        Name: 'Barbarian'
-    },
-    {
-        Number: '52',
-        Name: 'Bard'
-    },
-    {
-        Number: '53',
-        Name: 'Bard'
-    },
-    {
-        Number: '54',
-        Name: 'Bard'
-    },
-    {
-        Number: '55',
-        Name: 'Cleric'
-    },
-    {
-        Number: '56',
-        Name: 'Cleric'
-    },
-    {
-        Number: '57',
-        Name: 'Cleric'
-    },
-    {
-        Number: '58',
-        Name: 'Dark Apostate'
-    },
-    {
-        Number: '59',
-        Name: 'Dark Apostate'
-    },
-    {
-        Number: '60',
-        Name: 'Dark Apostate'
-    },
-    {
-        Number: '61',
-        Name: 'Druid'
-    },
-    {
-        Number: '62',
-        Name: 'Druid'
-    },
-    {
-        Number: '63',
-        Name: 'Druid'
-    },
-    {
-        Number: '64',
-        Name: 'Favored Soul'
-    },
-    {
-        Number: '65',
-        Name: 'Favored Soul'
-    },
-    {
-        Number: '66',
-        Name: 'Favored Soul'
-    },
-    {
-        Number: '67',
-        Name: 'Fighter'
-    },
-    {
-        Number: '68',
-        Name: 'Fighter'
-    },
-    {
-        Number: '69',
-        Name: 'Fighter'
-    },
-    {
-        Number: '70',
-        Name: 'Monk'
-    },
-    {
-        Number: '71',
-        Name: 'Monk'
-    },
-    {
-        Number: '72',
-        Name: 'Monk'
-    },
-    {
-        Number: '73',
-        Name: 'Paladin'
-    },
-    {
-        Number: '74',
-        Name: 'Paladin'
-    },
-    {
-        Number: '75',
-        Name: 'Paladin'
-    },
-    {
-        Number: '76',
-        Name: 'Ranger'
-    },
-    {
-        Number: '77',
-        Name: 'Ranger'
-    },
-    {
-        Number: '78',
-        Name: 'Ranger'
-    },
-    {
-        Number: '79',
-        Name: 'Rogue'
-    },
-    {
-        Number: '80',
-        Name: 'Rogue'
-    },
-    {
-        Number: '81',
-        Name: 'Rogue'
-    },
-    {
-        Number: '82',
-        Name: 'Sacred Fist'
-    },
-    {
-        Number: '83',
-        Name: 'Sacred Fist'
-    },
-    {
-        Number: '84',
-        Name: 'Sacred Fist'
-    },
-    {
-        Number: '85',
-        Name: 'Sorcerer'
-    },
-    {
-        Number: '86',
-        Name: 'Sorcerer'
-    },
-    {
-        Number: '87',
-        Name: 'Sorcerer'
-    },
-    {
-        Number: '88',
-        Name: 'Stormsinger'
-    },
-    {
-        Number: '89',
-        Name: 'Stormsinger'
-    },
-    {
-        Number: '90',
-        Name: 'Stormsinger'
-    },
-    {
-        Number: '91',
-        Name: 'Warlock'
-    },
-    {
-        Number: '92',
-        Name: 'Warlock'
-    },
-    {
-        Number: '93',
-        Name: 'Warlock'
-    },
-    {
-        Number: '94',
-        Name: 'Wizard'
-    },
-    {
-        Number: '95',
-        Name: 'Wizard'
-    },
-    {
-        Number: '96',
-        Name: 'Wizard'
-    },
-    {
-        Number: '97',
-        Name: 'Aasimar Scourge'
-    },
-    {
-        Number: '98',
-        Name: 'Aasimar Scourge'
-    },
-    {
-        Number: '99',
-        Name: 'Aasimar Scourge'
-    },
-    {
-        Number: '100',
-        Name: 'Bladeforged'
-    },
-    {
-        Number: '101',
-        Name: 'Bladeforged'
-    },
-    {
-        Number: '102',
-        Name: 'Bladeforged'
-    },
-    {
-        Number: '103',
-        Name: 'Deep Gnome'
-    },
-    {
-        Number: '104',
-        Name: 'Deep Gnome'
-    },
-    {
-        Number: '105',
-        Name: 'Deep Gnome'
-    },
-    {
-        Number: '106',
-        Name: 'Purple Dragon Knight'
-    },
-    {
-        Number: '107',
-        Name: 'Purple Dragon Knight'
-    },
-    {
-        Number: '108',
-        Name: 'Purple Dragon Knight'
-    },
-    {
-        Number: '109',
-        Name: 'Razorclaw Shifter'
-    },
-    {
-        Number: '110',
-        Name: 'Razorclaw Shifter'
-    },
-    {
-        Number: '111',
-        Name: 'Razorclaw Shifter'
-    },
-    {
-        Number: '112',
-        Name: 'Shadar-Kai'
-    },
-    {
-        Number: '113',
-        Name: 'Shadar-Kai'
-    },
-    {
-        Number: '114',
-        Name: 'Shadar-Kai'
-    },
-    {
-        Number: '115',
-        Name: 'Morninglord'
-    },
-    {
-        Number: '116',
-        Name: 'Morninglord'
-    },
-    {
-        Number: '117',
-        Name: 'Morninglord'
-    },
-    {
-        Number: '118',
-        Name: 'Tabaxi Trailblazer'
-    },
-    {
-        Number: '119',
-        Name: 'Tabaxi Trailblazer'
-    },
-    {
-        Number: '120',
-        Name: 'Tabaxi Trailblazer'
-    },
-    {
-        Number: '121',
-        Name: 'Tiefling Scoundrel'
-    },
-    {
-        Number: '122',
-        Name: 'Tiefling Scoundrel'
-    },
-    {
-        Number: '123',
-        Name: 'Tiefling Scoundrel'
-    },
-    {
-        Number: '124',
-        Name: 'Energy Criticals'
-    },
-    {
-        Number: '125',
-        Name: 'Energy Criticals'
-    },
-    {
-        Number: '126',
-        Name: 'Energy Criticals'
-    },
-    {
-        Number: '127',
-        Name: 'Enchant Weapon'
-    },
-    {
-        Number: '128',
-        Name: 'Enchant Weapon'
-    },
-    {
-        Number: '129',
-        Name: 'Enchant Weapon'
-    },
-    {
-        Number: '130',
-        Name: 'Arcane Alacrity'
-    },
-    {
-        Number: '131',
-        Name: 'Arcane Alacrity'
-    },
-    {
-        Number: '132',
-        Name: 'Arcane Alacrity'
-    },
-    {
-        Number: '133',
-        Name: 'Ancient Knowledge'
-    },
-    {
-        Number: '134',
-        Name: 'Ancient Knowledge'
-    },
-    {
-        Number: '135',
-        Name: 'Ancient Knowledge'
-    },
-    {
-        Number: '136',
-        Name: 'Eclipse Power'
-    },
-    {
-        Number: '137',
-        Name: 'Eclipse Power'
-    },
-    {
-        Number: '138',
-        Name: 'Eclipse Power'
-    },
-    {
-        Number: '139',
-        Name: 'Power Over Life and Death'
-    },
-    {
-        Number: '140',
-        Name: 'Power Over Life and Death'
-    },
-    {
-        Number: '141',
-        Name: 'Power Over Life and Death'
-    },
-    {
-        Number: '142',
-        Name: 'Brace'
-    },
-    {
-        Number: '143',
-        Name: 'Brace'
-    },
-    {
-        Number: '144',
-        Name: 'Brace'
-    },
-    {
-        Number: '145',
-        Name: 'Block Energy'
-    },
-    {
-        Number: '146',
-        Name: 'Block Energy'
-    },
-    {
-        Number: '147',
-        Name: 'Block Energy'
-    },
-    {
-        Number: '148',
-        Name: 'Ancient Blessing'
-    },
-    {
-        Number: '149',
-        Name: 'Ancient Blessing'
-    },
-    {
-        Number: '150',
-        Name: 'Ancient Blessing'
-    },
-    {
-        Number: '151',
-        Name: 'Doublestrike'
-    },
-    {
-        Number: '152',
-        Name: 'Doublestrike'
-    },
-    {
-        Number: '153',
-        Name: 'Doublestrike'
-    },
-    {
-        Number: '154',
-        Name: 'Skill Mastery'
-    },
-    {
-        Number: '155',
-        Name: 'Skill Mastery'
-    },
-    {
-        Number: '156',
-        Name: 'Skill Mastery'
-    },
-    {
-        Number: '157',
-        Name: 'Fortification'
-    },
-    {
-        Number: '158',
-        Name: 'Fortification'
-    },
-    {
-        Number: '159',
-        Name: 'Fortification'
-    },
-    {
-        Number: '160',
-        Name: 'Ancient Tactics'
-    },
-    {
-        Number: '161',
-        Name: 'Ancient Tactics'
-    },
-    {
-        Number: '162',
-        Name: 'Ancient Tactics'
-    },
-    {
-        Number: '163',
-        Name: 'Doubleshot'
-    },
-    {
-        Number: '164',
-        Name: 'Doubleshot'
-    },
-    {
-        Number: '165',
-        Name: 'Doubleshot'
-    },
-    {
-        Number: '166',
-        Name: 'Ancient Power'
-    },
-    {
-        Number: '167',
-        Name: 'Ancient Power'
-    },
-    {
-        Number: '168',
-        Name: 'Fast Healing'
-    },
-    {
-        Number: '169',
-        Name: 'Fast Healing'
-    },
-    {
-        Number: '170',
-        Name: 'Fast Healing'
-    },
-    {
-        Number: '171',
-        Name: 'Colors of the Queen'
-    },
-    {
-        Number: '172',
-        Name: 'Colors of the Queen'
-    },
-    {
-        Number: '173',
-        Name: 'Colors of the Queen'
-    },
-    {
-        Number: '174',
-        Name: 'Ancient Power'
-    }
-]
+let totalCompletionist = {
+    1: 'Human',
+    2: 'Human',
+    3: 'Human',
+    4: 'Dwarf',
+    5: 'Dwarf',
+    6: 'Dwarf',
+    7: 'Aasimar',
+    8: 'Aasimar',
+    9: 'Aasimar',
+    10: 'Dragonborn',
+    11: 'Dragonborn',
+    12: 'Dragonborn',
+    13: 'Drow',
+    14: 'Drow',
+    15: 'Drow',
+    16: 'Elf',
+    17: 'Elf',
+    18: 'Elf',
+    19: 'Gnome',
+    20: 'Gnome',
+    21: 'Gnome',
+    22: 'Half-Elf',
+    23: 'Half-Elf',
+    24: 'Half-Elf',
+    25: 'Half-Orc',
+    26: 'Half-Orc',
+    27: 'Half-Orc',
+    28: 'Shifter',
+    29: 'Shifter',
+    30: 'Shifter',
+    31: 'Warforged',
+    32: 'Warforged',
+    33: 'Warforged',
+    34: 'Tiefling',
+    35: 'Tiefling',
+    36: 'Tiefling',
+    37: 'Halfling',
+    38: 'Halfling',
+    39: 'Halfling',
+    40: 'Tabaxi',
+    41: 'Tabaxi',
+    42: 'Tabaxi',
+    43: 'Alchemist',
+    44: 'Alchemist',
+    45: 'Alchemist',
+    46: 'Artificer',
+    47: 'Artificer',
+    48: 'Artificer',
+    49: 'Barbarian',
+    50: 'Barbarian',
+    51: 'Barbarian',
+    52: 'Bard',
+    53: 'Bard',
+    54: 'Bard',
+    55: 'Cleric',
+    56: 'Cleric',
+    57: 'Cleric',
+    58: 'Dark Apostate',
+    59: 'Dark Apostate',
+    60: 'Dark Apostate',
+    61: 'Druid',
+    62: 'Druid',
+    63: 'Druid',
+    64: 'Favored Soul',
+    65: 'Favored Soul',
+    66: 'Favored Soul',
+    67: 'Fighter',
+    68: 'Fighter',
+    69: 'Fighter',
+    70: 'Monk',
+    71: 'Monk',
+    72: 'Monk',
+    73: 'Paladin',
+    74: 'Paladin',
+    75: 'Paladin',
+    76: 'Ranger',
+    77: 'Ranger',
+    78: 'Ranger',
+    79: 'Rogue',
+    80: 'Rogue',
+    81: 'Rogue',
+    82: 'Sacred Fist',
+    83: 'Sacred Fist',
+    84: 'Sacred Fist',
+    85: 'Sorcerer',
+    86: 'Sorcerer',
+    87: 'Sorcerer',
+    88: 'Stormsinger',
+    89: 'Stormsinger',
+    90: 'Stormsinger',
+    91: 'Warlock',
+    92: 'Warlock',
+    93: 'Warlock',
+    94: 'Wizard',
+    95: 'Wizard',
+    96: 'Wizard',
+    97: 'Aasimar Scourge',
+    98: 'Aasimar Scourge',
+    99: 'Aasimar Scourge',
+    100: 'Bladeforged',
+    101: 'Bladeforged',
+    102: 'Bladeforged',
+    103: 'Deep Gnome',
+    104: 'Deep Gnome',
+    105: 'Deep Gnome',
+    106: 'Purple Dragon Knight',
+    107: 'Purple Dragon Knight',
+    108: 'Purple Dragon Knight',
+    109: 'Razorclaw Shifter',
+    110: 'Razorclaw Shifter',
+    111: 'Razorclaw Shifter',
+    112: 'Shadar-Kai',
+    113: 'Shadar-Kai',
+    114: 'Shadar-Kai',
+    115: 'Morninglord',
+    116: 'Morninglord',
+    117: 'Morninglord',
+    118: 'Tabaxi Trailblazer',
+    119: 'Tabaxi Trailblazer',
+    120: 'Tabaxi Trailblazer',
+    121: 'Tiefling Scoundrel',
+    122: 'Tiefling Scoundrel',
+    123: 'Tiefling Scoundrel',
+    124: 'Energy Criticals',
+    125: 'Energy Criticals',
+    126: 'Energy Criticals',
+    127: 'Enchant Weapon',
+    128: 'Enchant Weapon',
+    129: 'Enchant Weapon',
+    130: 'Arcane Alacrity',
+    131: 'Arcane Alacrity',
+    132: 'Arcane Alacrity',
+    133: 'Ancient Knowledge',
+    134: 'Ancient Knowledge',
+    135: 'Ancient Knowledge',
+    136: 'Eclipse Power',
+    137: 'Eclipse Power',
+    138: 'Eclipse Power',
+    139: 'Power Over Life and Death',
+    140: 'Power Over Life and Death',
+    141: 'Power Over Life and Death',
+    142: 'Brace',
+    143: 'Brace',
+    144: 'Brace',
+    145: 'Block Energy',
+    146: 'Block Energy',
+    147: 'Block Energy',
+    148: 'Ancient Blessing',
+    149: 'Ancient Blessing',
+    150: 'Ancient Blessing',
+    151: 'Doublestrike',
+    152: 'Doublestrike',
+    153: 'Doublestrike',
+    154: 'Skill Mastery',
+    155: 'Skill Mastery',
+    156: 'Skill Mastery',
+    157: 'Fortification',
+    158: 'Fortification',
+    159: 'Fortification',
+    160: 'Ancient Tactics',
+    161: 'Ancient Tactics',
+    162: 'Ancient Tactics',
+    163: 'Doubleshot',
+    164: 'Doubleshot',
+    165: 'Doubleshot',
+    166: 'Ancient Power',
+    167: 'Ancient Power',
+    168: 'Fast Healing',
+    169: 'Fast Healing',
+    170: 'Fast Healing',
+    171: 'Colors of the Queen',
+    172: 'Colors of the Queen',
+    173: 'Colors of the Queen',
+    174: 'Ancient Power'
+}

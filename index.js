@@ -9,65 +9,65 @@ const numberOfHeroicClassesInDDO = 15;
 const numberOfRacesInDDO = 14;
 
 let pastLivesPassiveBonuses = {
-    'bonusDcTrasmutation': 0,
-    'maximumSpellPoint': 0,
-    'bonusIntelligenceSkills': 0,
-    'bonusUmd': 0,
-    'bonusHitPoints': 0,
-    'bonusSavesEnchIll': 0,
-    'bonusBardSongUsage': 0,
-    'bonusDcConjuration': 0,
-    'turnUndeadAttempt': 0,
-    'turnUndeadHigher': 0,
-    'bonusSummon': 0,
-    'bonusSpellPen': 0,
-    'bonusAttackRoll': 0,
-    'bonusDcTactical': 0,
-    'bonusDamageRolls': 0,
-    'bonusPositiveHealAmp': 0,
-    'bonusDmgRanged': 0,
-    'elementResistance': 0,
-    'bonusSavedTrap': 0,
-    'bonusDmgSneak': 0,
-    'bonusDcEvocation': 0,
-    'bonusMrr': 0,
-    'bonusDcWands': 0,
-    'bonusHaggle': 0,
-    'bonusBalance': 0,
-    'bonusMoveSilently': 0,
-    'bonusSpot': 0,
-    'bonusSpellcraft': 0,
-    'bonusHeal': 0,
-    'bonusSearch': 0,
-    'bonusDiplomacy': 0,
-    'bonusIntimidate': 0,
-    'bonusRepair': 0,
-    'bonusTumble': 0,
-    'bonusWisdom': 0,
-    'bonusCharisma': 0,
-    'bonusIntelligence': 0,
-    'bonusConstitution': 0,
-    'bonusDexterity': 0,
-    'bonusStrength': 0,
-    'bonusRacialActionPoint': 0,
-    'bonusFortitudeSave': 0,
-    'bonusFortification': 0,
-    'bonusPrr': 0,
-    'bonusWillSave': 0,
-    'bonusReflexSave': 0,
-    'bonusDodge': 0,
-    'bonusPositiveSpellPower': 0,
-    'bonusElementAbsorption': 0,
-    'bonusAcFlat': 0,
-    'bonusAcPerTen': 0,
-    'bonusHpEpicFlat': 0,
-    'bonusHpEpicPerTen': 0,
-    'bonusNegativeHealAmp': 0,
-    'bonusNegativeSpellPower': 0,
-    'bonusLightningSpellPower': 0,
-    'bonusSonicSpellPower': 0,
-    'bonusDestinyPoint': 0,
-    'bonusAllSkills': 0
+    bonusDcTrasmutation: 0,
+    maximumSpellPoint: 0,
+    bonusIntelligenceSkills: 0,
+    bonusUmd: 0,
+    bonusHitPoints: 0,
+    bonusSavesEnchIll: 0,
+    bonusBardSongUsage: 0,
+    bonusDcConjuration: 0,
+    turnUndeadAttempt: 0,
+    turnUndeadHigher: 0,
+    bonusSummon: 0,
+    bonusSpellPen: 0,
+    bonusAttackRoll: 0,
+    bonusDcTactical: 0,
+    bonusDamageRolls: 0,
+    bonusPositiveHealAmp: 0,
+    bonusDmgRanged: 0,
+    elementResistance: 0,
+    bonusSavedTrap: 0,
+    bonusDmgSneak: 0,
+    bonusDcEvocation: 0,
+    bonusMrr: 0,
+    bonusDcWands: 0,
+    bonusHaggle: 0,
+    bonusBalance: 0,
+    bonusMoveSilently: 0,
+    bonusSpot: 0,
+    bonusSpellcraft: 0,
+    bonusHeal: 0,
+    bonusSearch: 0,
+    bonusDiplomacy: 0,
+    bonusIntimidate: 0,
+    bonusRepair: 0,
+    bonusTumble: 0,
+    bonusWisdom: 0,
+    bonusCharisma: 0,
+    bonusIntelligence: 0,
+    bonusConstitution: 0,
+    bonusDexterity: 0,
+    bonusStrength: 0,
+    bonusRacialActionPoint: 0,
+    bonusFortitudeSave: 0,
+    bonusFortification: 0,
+    bonusPrr: 0,
+    bonusWillSave: 0,
+    bonusReflexSave: 0,
+    bonusDodge: 0,
+    bonusPositiveSpellPower: 0,
+    bonusElementAbsorption: 0,
+    bonusAcFlat: 0,
+    bonusAcPerTen: 0,
+    bonusHpEpicFlat: 0,
+    bonusHpEpicPerTen: 0,
+    bonusNegativeHealAmp: 0,
+    bonusNegativeSpellPower: 0,
+    bonusLightningSpellPower: 0,
+    bonusSonicSpellPower: 0,
+    bonusDestinyPoint: 0,
+    bonusAllSkills: 0
 }
 
 function calculateReincarnations() {
@@ -90,8 +90,8 @@ function calculateReincarnations() {
     let heroicCompletionistArray = [];
     let racialCompletionistArray = [];
     // calculate only so many past lives, that was chosen
-    for (let i = 0; i < numberOfReincarnations; i++) {
-        switch (reincarnatedClassesArray[i]) {
+    for (const pastLife of reincarnatedClassesArray) {
+        switch (pastLife) {
             case '-':
                 break;
             case 'Alchemist':
@@ -196,7 +196,7 @@ function calculateReincarnations() {
                         calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
-                        console.log('error: number of human reincarnation is not 1, 2 or 3');
+                        numberOfReincarnationError('Human');
                 }
                 break;
             case 'Dwarf':
@@ -215,7 +215,7 @@ function calculateReincarnations() {
                         calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
-                        console.log('error: number of dwarf reincarnation is not 1, 2 or 3');
+                        numberOfReincarnationError('Dwarf');
                 }
                 break;
             case 'Elf':
@@ -234,7 +234,7 @@ function calculateReincarnations() {
                         calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
-                        console.log('error: number of elf reincarnation is not 1, 2 or 3');
+                        numberOfReincarnationError('Elf');
                 }
                 break;
             case 'Halfling':
@@ -253,7 +253,7 @@ function calculateReincarnations() {
                         calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
-                        console.log('error: number of halfling reincarnation is  not 1, 2 or 3');
+                        numberOfReincarnationError('Halfling');
                 }
                 break;
             case 'Dragonborn':
@@ -272,7 +272,7 @@ function calculateReincarnations() {
                         calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
-                        console.log('error: number of dragonborn reincarnation is  not 1, 2 or 3');
+                        numberOfReincarnationError('Dragonborn');
                 }
                 break;
             case 'Aasimar':
@@ -291,7 +291,7 @@ function calculateReincarnations() {
                         calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
-                        console.log('error: number of aasimar reincarnation is  not 1, 2 or 3');
+                        numberOfReincarnationError('Aasimar');
                 }
                 break;
             case 'Drow':
@@ -310,7 +310,7 @@ function calculateReincarnations() {
                         calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
-                        console.log('error: number of drow reincarnation is  not 1, 2 or 3');
+                        numberOfReincarnationError('Drow');
                 }
                 break;
             case 'Gnome':
@@ -329,7 +329,7 @@ function calculateReincarnations() {
                         calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
-                        console.log('error: number of gnome reincarnation is  not 1, 2 or 3');
+                        numberOfReincarnationError('Gnome');
                 }
                 break;
             case 'Half-Elf':
@@ -348,7 +348,7 @@ function calculateReincarnations() {
                         calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
-                        console.log('error: number of halfelf reincarnation is  not 1, 2 or 3');
+                        numberOfReincarnationError('Half-Elf');
                 }
                 break;
             case 'Half-Orc':
@@ -367,7 +367,7 @@ function calculateReincarnations() {
                         calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
-                        console.log('error: number of halforc reincarnation is  not 1, 2 or 3');
+                        numberOfReincarnationError('Half-Orc');
                 }
                 break;
             case 'Shifter':
@@ -386,7 +386,7 @@ function calculateReincarnations() {
                         calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
-                        console.log('error: number of shifter reincarnation is  not 1, 2 or 3');
+                        numberOfReincarnationError('Shifter');
                 }
                 break;
             case 'Tiefling':
@@ -405,7 +405,7 @@ function calculateReincarnations() {
                         calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
-                        console.log('error: number of tiefling reincarnation is  not 1, 2 or 3');
+                        numberOfReincarnationError('Tiefling');
                 }
                 break;
             case 'Warforged':
@@ -424,7 +424,7 @@ function calculateReincarnations() {
                         calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
-                        console.log('error: number of warforged reincarnation is  not 1, 2 or 3');
+                        numberOfReincarnationError('Warforged');
                 }
                 break;
             case 'Tabaxi':
@@ -443,7 +443,7 @@ function calculateReincarnations() {
                         calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
                         break;
                     default:
-                        console.log('error: number of warforged reincarnation is  not 1, 2 or 3');
+                        numberOfReincarnationError('Tabaxi');
                 }
                 break;
             case 'Aasimar Scourge':
@@ -550,16 +550,21 @@ function calculateReincarnations() {
                 calculatedPastLivesBonuses.bonusHpEpicPerTen += 4;
                 break;
             default:
-                console.log('error: class not found in the switch for feats calculation' + reincarnatedClassesArray[i]);
+                console.log('error: Past Life not found in the switch for feats calculation' + pastLife);
         }
     };
+    calculateEpicCompletionist(epicReinc);
+    calculateHeroicCompletionist(heroicCompletionistArray);
+    calculateRacialCompletionist(racialCompletionistArray);
+}
 
-    // calculate EPIC COMPLETIONIST
+function calculateEpicCompletionist(epicReinc) {
     // for every 12 of any epic past lives
     let bonusDestinyPoint = Math.floor(epicReinc/12)
     calculatedPastLivesBonuses.bonusDestinyPoint += bonusDestinyPoint;
+}
 
-    // calculate HEROIC COMPLETIONIST
+function calculateHeroicCompletionist(heroicCompletionistArray) {
     // one of each classes
     const unique = (value, index, self) => {
         return self.indexOf(value) === index
@@ -574,8 +579,9 @@ function calculateReincarnations() {
         calculatedPastLivesBonuses.bonusCharisma += 2;
         calculatedPastLivesBonuses.bonusAllSkills += 2;
     }
+}
 
-    // calculate RACIAL COMPLETIONIST
+function calculateRacialCompletionist(racialCompletionistArray) {
     // three of each races
     if (racialCompletionistArray.length >= numberOfRacesInDDO * 3) {
         calculatedPastLivesBonuses.bonusStrength += 2;
@@ -669,9 +675,8 @@ function createEventListenerForNumberofReincarnationsSelect() {
 
 function saveReincarnationOptionsIds() {
     let selectionsArray = document.getElementsByClassName('reincarnationSelect');
-    for (let i = 0; i < selectionsArray.length; i++) {
-        let idOfSelection = selectionsArray[i].id;
-        reincarnationOptions.push(idOfSelection);
+    for (const selection of selectionsArray) {
+        reincarnationOptions.push(selection.id);
     };
 }
 
@@ -694,8 +699,8 @@ function saveNumberOfReincarnations() {
 function saveReincarnatedClasses() {
     reincarnatedClassesArray = [];
     let selectionsArray = document.getElementsByClassName('reincarnationSelect');
-    for (let i = 0; i < selectionsArray.length; i++) {
-        let nameOfClass = selectionsArray[i].selectedOptions[0].label;
+    for (const selection of selectionsArray) {
+        let nameOfClass = selection.selectedOptions[0].label;
         reincarnatedClassesArray.push(nameOfClass);
     };
 }
@@ -724,33 +729,33 @@ function printFeatsCalculation() {
 
 function checkMaximumNumberOfReincarnationsForOneClass() {
     let counts = {}
-    for (let i = 0; i < reincarnatedClassesArray.length; i++) {
-        if (counts[reincarnatedClassesArray[i]]) {
-            counts[reincarnatedClassesArray[i]] += 1
+    for (const pastLife of reincarnatedClassesArray) {
+        if (counts[pastLife]) {
+            counts[pastLife] += 1
         } else {
-            counts[reincarnatedClassesArray[i]] = 1
+            counts[pastLife] = 1
         }
     }
     for (let prop in counts) {
         // disable all options that should be disabled
         if (counts[prop] >= 3 && prop != '-') {
             // iterate over all selects
-            for (let s = 0; s < reincarnationOptions.length; s++) {
+            for (const reincarnationOption of reincarnationOptions) {
                 // iterate over options of given select
-                for (let o = 0; o < document.getElementById(reincarnationOptions[s]).options.length; o++) {
-                    if (document.getElementById(reincarnationOptions[s]).options[o].label === prop) {
-                        document.getElementById(reincarnationOptions[s]).options[o].disabled = true;
+                for (let o = 0; o < document.getElementById(reincarnationOption).options.length; o++) {
+                    if (document.getElementById(reincarnationOption).options[o].label === prop) {
+                        document.getElementById(reincarnationOption).options[o].disabled = true;
                     }
                 }
             }
         // enable all options that should be enabled
         } else {
             // iterate over all selects
-            for (let s = 0; s < reincarnationOptions.length; s++) {
+            for (const reincarnationOption of reincarnationOptions) {
                 // iterate over options of given select
-                for (let o = 0; o < document.getElementById(reincarnationOptions[s]).options.length; o++) {
-                    if (document.getElementById(reincarnationOptions[s]).options[o].label === prop) {
-                        document.getElementById(reincarnationOptions[s]).options[o].disabled = false;
+                for (let o = 0; o < document.getElementById(reincarnationOption).options.length; o++) {
+                    if (document.getElementById(reincarnationOption).options[o].label === prop) {
+                        document.getElementById(reincarnationOption).options[o].disabled = false;
                     }
                 }
             }
@@ -760,22 +765,26 @@ function checkMaximumNumberOfReincarnationsForOneClass() {
 
 function changeSelectColorForDefaultValue() {
     let selectionsArray = document.getElementsByClassName('reincarnationSelect');
-    for (let i = 0; i < selectionsArray.length; i++) {
-        let nameOfClass = selectionsArray[i].selectedOptions[0].label;
+    for (const selection of selectionsArray) {
+        let nameOfClass = selection.selectedOptions[0].label;
         if (nameOfClass === '-') {
-            selectionsArray[i].style.backgroundColor = '#f7e98e';
+            selection.style.backgroundColor = '#f7e98e';
         } else {
-            selectionsArray[i].style.backgroundColor = 'white';
+            selection.style.backgroundColor = 'white';
         }
     };
 }
 
 function enableAllOptions() {
-    for (let s = 0; s < reincarnationOptions.length; s++) {
-        for (let o = 0; o < document.getElementById(reincarnationOptions[s]).options.length; o++) {
-            document.getElementById(reincarnationOptions[s]).options[o].disabled = false;
+    for (const reincarnationOption of reincarnationOptions) {
+        for (let o = 0; o < document.getElementById(reincarnationOption).options.length; o++) {
+            document.getElementById(reincarnationOption).options[o].disabled = false;
         }
     }
+}
+
+function numberOfReincarnationError(race) {
+    console.log('error: number of ' + race + ' reincarnation is  not 1, 2 or 3');
 }
 
 generateSelectBoxes(1, 44, 'columnFormOne');
