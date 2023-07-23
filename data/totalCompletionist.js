@@ -172,5 +172,14 @@ let totalCompletionist = {
     171: 'Colors of the Queen',
     172: 'Colors of the Queen',
     173: 'Colors of the Queen',
-    174: 'Ancient Power'
+    174: 'Ancient Power',
+    175: 'Blight Caster',
+    176: 'Blight Caster',
+    177: 'Blight Caster',
+    178: 'Dark Hunter',
+    179: 'Dark Hunter',
+    180: 'Dark Hunter',
+    181: 'Acolyte of the Skin',
+    182: 'Acolyte of the Skin',
+    183: 'Acolyte of the Skin'
 }

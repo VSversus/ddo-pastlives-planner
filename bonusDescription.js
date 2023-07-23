@@ -21,6 +21,7 @@ let textForPastLivePassiveBonus = {
     elementResistance: 'bonus to elemental resistances',
     bonusSavedTrap: 'bonus to saves vs. traps',
     bonusDmgSneak: 'bonus to damage when sneaking',
+    bonusAttackSneak: 'bonus to attack when sneaking',
     bonusDcEvocation: 'bonus to DC\'s of your Evocations spells',
     bonusMrr: 'bonus to magical resistance rating (MRR)',
     bonusDcWands: 'bonus to DC\'s of your wands',
@@ -58,5 +59,8 @@ let textForPastLivePassiveBonus = {
     bonusLightningSpellPower: 'bonus to lightning spell power',
     bonusSonicSpellPower: 'bonus to sonic spell power',
     bonusDestinyPoint: 'bonus destiny points',
-    bonusAllSkills: 'bonus to all skills'
+    bonusAllSkills: 'bonus to all skills',
+    bonusPoisonSpellPower: 'bonus to poison spell power',
+    bonusAcidSpellPower: 'bonus to acid spell power',
+    bonusFireSpellPower: 'bonus to fire spell power'
 }

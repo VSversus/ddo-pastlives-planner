@@ -4,8 +4,8 @@ let calculatedPastLivesBonuses;
 let reincarnationOptions = [];
 let numberOfReincarnations = 0;
 let reincarnatedClassesArray = [];
-const maxNumberOfReincarnations = 174;
-const numberOfHeroicClassesInDDO = 15;
+const maxNumberOfReincarnations = 183;
+const numberOfHeroicClassesInDDO = 15; // archetypes not included
 const numberOfRacesInDDO = 14;
 
 let pastLivesPassiveBonuses = {
@@ -29,6 +29,7 @@ let pastLivesPassiveBonuses = {
     elementResistance: 0,
     bonusSavedTrap: 0,
     bonusDmgSneak: 0,
+    bonusAttackSneak: 0,
     bonusDcEvocation: 0,
     bonusMrr: 0,
     bonusDcWands: 0,
@@ -67,7 +68,10 @@ let pastLivesPassiveBonuses = {
     bonusLightningSpellPower: 0,
     bonusSonicSpellPower: 0,
     bonusDestinyPoint: 0,
-    bonusAllSkills: 0
+    bonusAllSkills: 0,
+    bonusPoisonSpellPower: 0,
+    bonusAcidSpellPower: 0,
+    bonusFireSpellPower: 0
 }
 
 function calculateReincarnations() {
@@ -179,6 +183,21 @@ function calculateReincarnations() {
                 calculatedPastLivesBonuses.bonusPositiveHealAmp += 5;
                 calculatedPastLivesBonuses.bonusPositiveSpellPower += 5;
                 heroicCompletionistArray.push('Paladin');
+                break;
+            case 'Blight Caster':
+                calculatedPastLivesBonuses.bonusPoisonSpellPower += 5;
+                calculatedPastLivesBonuses.bonusAcidSpellPower += 5;
+                heroicCompletionistArray.push('Druid');
+                break;
+            case 'Dark Hunter':
+                calculatedPastLivesBonuses.bonusDmgSneak += 1;
+                calculatedPastLivesBonuses.bonusAttackSneak += 1;
+                heroicCompletionistArray.push('Ranger');
+                break;
+            case 'Acolyte of the Skin':
+                calculatedPastLivesBonuses.bonusMrr += 1;
+                calculatedPastLivesBonuses.bonusFireSpellPower += 5;
+                heroicCompletionistArray.push('Warlock');
                 break;
             case 'Human':
                 racialCompletionistArray.push('Human');
@@ -597,7 +616,7 @@ function calculateRacialCompletionist(racialCompletionistArray) {
 // generate select boxes when the page load
 function generateSelectBoxes(minIndex, maxIndex, idOfColumn) {
     for (let index = minIndex; index <= maxIndex; index++) {
-        // <label class='col-sm-6 col-form-label' for='reincarnation001'>1st reincarnation</label>
+        // <label class='col-sm-5 col-form-label' for='reincarnation001'>1st reincarnation</label>
         var label = document.createElement('label');
         label.textContent = 'Past Life Feat ' + index;
         label.className = 'col-sm-5 col-form-label';
@@ -787,10 +806,10 @@ function numberOfReincarnationError(race) {
     console.log('error: number of ' + race + ' reincarnation is  not 1, 2 or 3');
 }
 
-generateSelectBoxes(1, 44, 'columnFormOne');
-generateSelectBoxes(45, 88, 'columnFormTwo');
-generateSelectBoxes(89, 132, 'columnFormThree');
-generateSelectBoxes(133, 174, 'columnFormFour');
+generateSelectBoxes(1, 46, 'columnFormOne');
+generateSelectBoxes(47, 92, 'columnFormTwo');
+generateSelectBoxes(93, 138, 'columnFormThree');
+generateSelectBoxes(139, 183, 'columnFormFour');
 addOptionsForNumberOfReincarnationsSelect();
 saveReincarnationOptionsIds();
 createEventListenerForNumberofReincarnationsSelect();
