@@ -181,5 +181,8 @@ let totalCompletionist = {
     180: 'Dark Hunter',
     181: 'Acolyte of the Skin',
     182: 'Acolyte of the Skin',
-    183: 'Acolyte of the Skin'
+    183: 'Acolyte of the Skin',
+    184: 'Trap Damage Absorption',
+    185: 'Trap Damage Absorption',
+    186: 'Trap Damage Absorption'
 }

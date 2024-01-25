@@ -56,6 +56,7 @@ let optionsArray = [
     'Skill Mastery',
     'Fortification',
     'Ancient Tactics',
+    'Trap Damage Absorption',
     'Doubleshot',
     'Fast Healing',
     'Colors of the Queen',

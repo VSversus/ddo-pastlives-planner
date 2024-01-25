@@ -4,7 +4,7 @@ let calculatedPastLivesBonuses;
 let reincarnationOptions = [];
 let numberOfReincarnations = 0;
 let reincarnatedClassesArray = [];
-const maxNumberOfReincarnations = 183;
+const maxNumberOfReincarnations = 186;
 const numberOfHeroicClassesInDDO = 15; // archetypes not included
 const numberOfRacesInDDO = 14;
 
@@ -94,8 +94,8 @@ function calculateReincarnations() {
     let heroicCompletionistArray = [];
     let racialCompletionistArray = [];
     // calculate only so many past lives, that was chosen
-    for (const pastLife of reincarnatedClassesArray) {
-        switch (pastLife) {
+    for (let i = 0; i < numberOfReincarnations; i++) {
+        switch (reincarnatedClassesArray[i]) {
             case '-':
                 break;
             case 'Alchemist':
@@ -548,6 +548,11 @@ function calculateReincarnations() {
                 calculatedPastLivesBonuses.bonusAcFlat += 2;
                 calculatedPastLivesBonuses.bonusAcPerTen += 1;
                 break;
+            case 'Trap Damage Absorption':
+                epicReinc += 1;
+                calculatedPastLivesBonuses.bonusAcFlat += 2;
+                calculatedPastLivesBonuses.bonusAcPerTen += 1;
+                break;
             case 'Doubleshot':
                 epicReinc += 1;
                 calculatedPastLivesBonuses.bonusHitPoints += 3;
@@ -806,10 +811,10 @@ function numberOfReincarnationError(race) {
     console.log('error: number of ' + race + ' reincarnation is  not 1, 2 or 3');
 }
 
-generateSelectBoxes(1, 46, 'columnFormOne');
-generateSelectBoxes(47, 92, 'columnFormTwo');
-generateSelectBoxes(93, 138, 'columnFormThree');
-generateSelectBoxes(139, 183, 'columnFormFour');
+generateSelectBoxes(1, 47, 'columnFormOne');
+generateSelectBoxes(48, 94, 'columnFormTwo');
+generateSelectBoxes(95, 140, 'columnFormThree');
+generateSelectBoxes(141, 186, 'columnFormFour');
 addOptionsForNumberOfReincarnationsSelect();
 saveReincarnationOptionsIds();
 createEventListenerForNumberofReincarnationsSelect();
