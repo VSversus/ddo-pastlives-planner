@@ -65,4 +65,5 @@ let textForPastLivePassiveBonus = {
     bonusFireSpellPower: 'bonus to fire spell power',
     bonusDmgMelee: 'bonus to damage with melee weapons',
     bonusBreathDc: 'bonus to breath weapon DC',
+    bonusListen: 'bonus to Listen',
 }

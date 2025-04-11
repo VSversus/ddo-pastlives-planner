@@ -188,4 +188,7 @@ let totalCompletionist = {
     187: 'Dragon Lord',
     188: 'Dragon Lord',
     189: 'Dragon Lord',
+    190: 'Eladrin',
+    191: 'Eladrin',
+    192: 'Eladrin',
 }
