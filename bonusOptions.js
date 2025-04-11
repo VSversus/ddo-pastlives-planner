@@ -35,6 +35,7 @@ let optionsArray = [
     'Tiefling',
     'Warforged',
     'Tabaxi',
+    'Eladrin',
     'Aasimar Scourge',
     'Bladeforged',
     'Deep Gnome',

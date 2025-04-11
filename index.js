@@ -4,9 +4,9 @@ let calculatedPastLivesBonuses;
 let reincarnationOptions = [];
 let numberOfReincarnations = 0;
 let reincarnatedClassesArray = [];
-const maxNumberOfReincarnations = 189;
+const maxNumberOfReincarnations = 192;
 const numberOfHeroicClassesInDDO = 15; // archetypes not included
-const numberOfRacesInDDO = 14;
+const numberOfRacesInDDO = 15;
 
 let pastLivesPassiveBonuses = {
     bonusDcTrasmutation: 0,
@@ -73,7 +73,8 @@ let pastLivesPassiveBonuses = {
     bonusAcidSpellPower: 0,
     bonusFireSpellPower: 0,
     bonusDmgMelee: 0,
-    bonusBreathDc: 0
+    bonusBreathDc: 0,
+    bonusListen: 0,
 }
 
 function calculateReincarnations() {
@@ -92,6 +93,7 @@ function calculateReincarnations() {
     let tieflingReinc = 0;
     let warforgedReinc = 0;
     let tabaxiReinc = 0;
+    let eladrinReinc = 0;
     let epicReinc = 0;
     let heroicCompletionistArray = [];
     let racialCompletionistArray = [];
@@ -472,6 +474,25 @@ function calculateReincarnations() {
                         numberOfReincarnationError('Tabaxi');
                 }
                 break;
+            case 'Eladrin':
+                racialCompletionistArray.push('Eladrin');
+                switch (eladrinReinc) {
+                    case 0:
+                        eladrinReinc += 1;
+                        calculatedPastLivesBonuses.bonusListen += 1;
+                        break;
+                    case 1:
+                        eladrinReinc += 1;
+                        calculatedPastLivesBonuses.bonusDexterity += 1;
+                        break;
+                    case 2:
+                        eladrinReinc += 1;
+                        calculatedPastLivesBonuses.bonusRacialActionPoint += 1;
+                        break;
+                    default:
+                        numberOfReincarnationError('Eladrin');
+                }
+                break;
             case 'Aasimar Scourge':
                 calculatedPastLivesBonuses.bonusFortitudeSave += 1;
                 break;
@@ -819,9 +840,9 @@ function numberOfReincarnationError(race) {
 }
 
 generateSelectBoxes(1, 48, 'columnFormOne');
-generateSelectBoxes(49, 95, 'columnFormTwo');
-generateSelectBoxes(96, 142, 'columnFormThree');
-generateSelectBoxes(143, 189, 'columnFormFour');
+generateSelectBoxes(49, 96, 'columnFormTwo');
+generateSelectBoxes(97, 144, 'columnFormThree');
+generateSelectBoxes(145, 192, 'columnFormFour');
 addOptionsForNumberOfReincarnationsSelect();
 saveReincarnationOptionsIds();
 createEventListenerForNumberofReincarnationsSelect();
