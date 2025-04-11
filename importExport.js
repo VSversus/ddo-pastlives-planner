@@ -51,16 +51,19 @@ function setEmpty() {
 }
 
 function setHeroicCompletionist() {
+    setEmpty();
     let heroicCompletionistArray = makeArrayFromObject(heroicCompletionist);
     importList(heroicCompletionistArray);
 }
 
 function setRacialCompletionist() {
+    setEmpty();
     let racialCompletionistArray = makeArrayFromObject(racialCompletionist);
     importList(racialCompletionistArray);
 }
 
 function setTotalCompletionist() {
+    setEmpty();
     let totalCompletionistArray = makeArrayFromObject(totalCompletionist);
     importList(totalCompletionistArray);
 }

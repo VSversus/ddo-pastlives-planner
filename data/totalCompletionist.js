@@ -184,5 +184,8 @@ let totalCompletionist = {
     183: 'Acolyte of the Skin',
     184: 'Trap Damage Absorption',
     185: 'Trap Damage Absorption',
-    186: 'Trap Damage Absorption'
+    186: 'Trap Damage Absorption',
+    187: 'Dragon Lord',
+    188: 'Dragon Lord',
+    189: 'Dragon Lord',
 }
