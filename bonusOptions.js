@@ -20,6 +20,7 @@ let optionsArray = [
     'Blight Caster',
     'Dark Hunter',
     'Acolyte of the Skin',
+    'Dragon Lord',
     'Human',
     'Dwarf',
     'Elf',
