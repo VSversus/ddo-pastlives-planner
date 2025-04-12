@@ -191,4 +191,7 @@ let totalCompletionist = {
     190: 'Eladrin',
     191: 'Eladrin',
     192: 'Eladrin',
+    193: 'Wild Mage',
+    194: 'Wild Mage',
+    195: 'Wild Mage',
 }

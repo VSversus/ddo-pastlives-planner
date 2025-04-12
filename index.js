@@ -4,7 +4,7 @@ let calculatedPastLivesBonuses;
 let reincarnationOptions = [];
 let numberOfReincarnations = 0;
 let reincarnatedClassesArray = [];
-const maxNumberOfReincarnations = 192;
+const maxNumberOfReincarnations = 195;
 const numberOfHeroicClassesInDDO = 15; // archetypes not included
 const numberOfRacesInDDO = 15;
 
@@ -75,6 +75,7 @@ let pastLivesPassiveBonuses = {
     bonusDmgMelee: 0,
     bonusBreathDc: 0,
     bonusListen: 0,
+    bonusUniversalSpellPower: 0,
 }
 
 function calculateReincarnations() {
@@ -207,6 +208,10 @@ function calculateReincarnations() {
                 calculatedPastLivesBonuses.bonusDmgMelee += 1;
                 calculatedPastLivesBonuses.bonusBreathDc += 1;
                 heroicCompletionistArray.push('Fighter');
+                break;
+            case 'Wild Mage':
+                calculatedPastLivesBonuses.bonusUniversalSpellPower += 3;
+                heroicCompletionistArray.push('Sorcerer');
                 break;
             case 'Human':
                 racialCompletionistArray.push('Human');
@@ -839,10 +844,10 @@ function numberOfReincarnationError(race) {
     console.log('error: number of ' + race + ' reincarnation is  not 1, 2 or 3');
 }
 
-generateSelectBoxes(1, 48, 'columnFormOne');
-generateSelectBoxes(49, 96, 'columnFormTwo');
-generateSelectBoxes(97, 144, 'columnFormThree');
-generateSelectBoxes(145, 192, 'columnFormFour');
+generateSelectBoxes(1, 49, 'columnFormOne');
+generateSelectBoxes(50, 98, 'columnFormTwo');
+generateSelectBoxes(99, 147, 'columnFormThree');
+generateSelectBoxes(148, 195, 'columnFormFour');
 addOptionsForNumberOfReincarnationsSelect();
 saveReincarnationOptionsIds();
 createEventListenerForNumberofReincarnationsSelect();
