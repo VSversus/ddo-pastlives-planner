@@ -21,6 +21,7 @@ let optionsArray = [
     'Dark Hunter',
     'Acolyte of the Skin',
     'Dragon Lord',
+    'Wild Mage',
     'Human',
     'Dwarf',
     'Elf',
