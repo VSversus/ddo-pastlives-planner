@@ -67,4 +67,5 @@ let textForPastLivePassiveBonus = {
     bonusBreathDc: 'bonus to breath weapon DC',
     bonusListen: 'bonus to Listen',
     bonusUniversalSpellPower: 'bonus to universal spell power',
+    bonusMaximizeMetamagic: 'discount to maximize metamagic spell points cost',
 }

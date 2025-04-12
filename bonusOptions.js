@@ -47,6 +47,7 @@ let optionsArray = [
     'Morninglord',
     'Tabaxi Trailblazer',
     'Eladrin Chaosmancer',
+    'Dragon Disciple',
     'Energy Criticals',
     'Enchant Weapon',
     'Arcane Alacrity',
