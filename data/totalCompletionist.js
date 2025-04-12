@@ -197,4 +197,7 @@ let totalCompletionist = {
     196: 'Eladrin Chaosmancer',
     197: 'Eladrin Chaosmancer',
     198: 'Eladrin Chaosmancer',
+    199: 'Dragon Disciple',
+    200: 'Dragon Disciple',
+    201: 'Dragon Disciple',
 }
