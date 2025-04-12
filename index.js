@@ -4,7 +4,7 @@ let calculatedPastLivesBonuses;
 let reincarnationOptions = [];
 let numberOfReincarnations = 0;
 let reincarnatedClassesArray = [];
-const maxNumberOfReincarnations = 195;
+const maxNumberOfReincarnations = 198;
 const numberOfHeroicClassesInDDO = 15; // archetypes not included
 const numberOfRacesInDDO = 15;
 
@@ -525,6 +525,9 @@ function calculateReincarnations() {
             case 'Tabaxi Trailblazer':
                 calculatedPastLivesBonuses.bonusSavedTrap += 1;
                 break;
+            case 'Eladrin Chaosmancer':
+                calculatedPastLivesBonuses.bonusUniversalSpellPower += 3;
+                break;
             case 'Energy Criticals':
                 epicReinc += 1;
                 calculatedPastLivesBonuses.bonusElementAbsorption += 1;
@@ -844,10 +847,10 @@ function numberOfReincarnationError(race) {
     console.log('error: number of ' + race + ' reincarnation is  not 1, 2 or 3');
 }
 
-generateSelectBoxes(1, 49, 'columnFormOne');
-generateSelectBoxes(50, 98, 'columnFormTwo');
-generateSelectBoxes(99, 147, 'columnFormThree');
-generateSelectBoxes(148, 195, 'columnFormFour');
+generateSelectBoxes(1, 50, 'columnFormOne');
+generateSelectBoxes(51, 100, 'columnFormTwo');
+generateSelectBoxes(101, 149, 'columnFormThree');
+generateSelectBoxes(150, 198, 'columnFormFour');
 addOptionsForNumberOfReincarnationsSelect();
 saveReincarnationOptionsIds();
 createEventListenerForNumberofReincarnationsSelect();

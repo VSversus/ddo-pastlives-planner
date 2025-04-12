@@ -46,6 +46,7 @@ let optionsArray = [
     'Shadar-Kai',
     'Morninglord',
     'Tabaxi Trailblazer',
+    'Eladrin Chaosmancer',
     'Energy Criticals',
     'Enchant Weapon',
     'Arcane Alacrity',
